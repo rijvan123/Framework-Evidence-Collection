@@ -1,0 +1,1265 @@
+[
+ {
+  "id": "A1",
+  "group": "A",
+  "refs": [
+   2
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "EMBER LightGBM baseline [2] (F)",
+  "modality": "PE; static EMBER v1 (2,351-d) in [2], v2 (2,381-d) in later releases",
+  "ml": "GBDT (LightGBM); MalConv CNN as second baseline",
+  "dataset": "EMBER-2017: 900K train (300K mal., 300K ben., 300K unlabelled), 200K test (100K/100K), test = Nov–Dec 2017; malicious = >40 VT vendors, benign = 0 {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "?",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "50:50 test",
+  "metric": "LightGBM ROC AUC > 0.99911; MalConv 0.99821 {RfP}. Published EMBER-2018 model on BODMAS Mar–Sep 2020: AUT(F1@π=10%) 0.947 {MoC}",
+  "fpr": "TPR > 92.99% at FPR < 0.1% (θ = 0.871), > 98.2% at < 1% {RfP}; on BODMAS, [1]'s 0.1% rule gives realised FPR 0.193% {MoC}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "single two-month hold-out; transfer to BODMAS measured in S10",
+  "artifact": "Y",
+  "artifact_note": "features with SHA-256, labels, code, model",
+  "gap": "50:50 test; point error rates without bounds; no custody of findings"
+ },
+ {
+  "id": "A2",
+  "group": "A",
+  "refs": [
+   1
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "BODMAS temporal GBDT analysis [1]",
+  "modality": "PE; static EMBER v2",
+  "ml": "GBDT; SOREL-DNN",
+  "dataset": "57,293 mal. (29 Aug 2019–30 Sep 2020), 77,142 ben. (1 Jan 2007–30 Sep 2020), 581 families; AV-derived labels via in-house AVClass-like scripts, ≈1% manual {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "N",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "benign from 2007; 34.0–60.3% malware per month {MoC, S2}",
+  "metric": "Monthly F1 92.14–97.76% (EMBER-GBDT), 95.70–98.94% (SOREL-GBDT); first-month GBDT FNR 1.71–7.23% {RfP}",
+  "fpr": "0.00–0.51% per month at a 0.1% validation-FPR threshold {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "T",
+   "U",
+   "X"
+  ],
+  "gen_note": "12 monthly tests; EMBER/SOREL/UCSB → BODMAS; unseen-family FNR ≤ 43.04% {RfP}",
+  "artifact": "Y",
+  "artifact_note": "features, metadata, disarmed malware binaries (BSD-2)",
+  "gap": "benign window and batch dates confound temporal tests (S6); no custody"
+ },
+ {
+  "id": "A3",
+  "group": "A",
+  "refs": [
+   3
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "SOREL-20M baselines [3] (F)",
+  "modality": "PE; static EMBER v2 + PE metadata",
+  "ml": "GBDT (LightGBM), FFNN; 5 seeds",
+  "dataset": "≈20M PE; time split: train to 29 Nov 2018, validation to 12 Jan 2019, test after; test 1,360,622 mal. / 2,834,441 ben. {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "test 32.4% malware {RfP, computed}",
+  "metric": "ROC curves (mean ± SD over 5 seeds); no scalar metric in the text {RfP}",
+  "fpr": "NR as a scalar",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "single temporal hold-out",
+  "artifact": "Y",
+  "artifact_note": "9,919,251 disarmed malware binaries, features, metadata, 10 models; Apache-2.0 code",
+  "gap": "CPU use needs sub-sampling; no error bounds or custody"
+ },
+ {
+  "id": "A4",
+  "group": "A",
+  "refs": [
+   4
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "EMBER2024 benchmark [4]",
+  "modality": "PE (Win32, Win64, .NET) + APK, ELF, PDF; EMBER v3 (2,568-d for PE)",
+  "ml": "GBDT (14 LightGBM models)",
+  "dataset": "3,238,315 files, Sep 2023–Dec 2024; train 52 weeks, test final 12 weeks; malicious ≥ 5 AV detections, benign 0 after ≥ 30 days; challenge set 6,315 initially undetected files {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "weekly 50:50 selection",
+  "metric": "All-format test ROC AUC 0.9969, PR AUC 0.9971; challenge set ROC AUC 0.9542, PR AUC 0.5722 {RfP}",
+  "fpr": "NR as a scalar in the text read",
+  "fpr_reported": false,
+  "prmcc": true,
+  "gen": [
+   "A",
+   "P"
+  ],
+  "gen_note": "evasive challenge set; six file formats",
+  "artifact": "Y",
+  "artifact_note": "features, labels, hashes, code, models; binaries via VirusTotal API",
+  "gap": "v3 features not interchangeable with BODMAS v2; balanced test"
+ },
+ {
+  "id": "A5",
+  "group": "A",
+  "refs": [
+   88
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2*",
+  "technique": "EXE-Bench ranking of 30 static detectors [88] (preprint)",
+  "modality": "PE; static detectors (feature- and byte-based)",
+  "ml": "30 detectors of mixed families",
+  "dataset": "Training: EMBER-2017 binaries re-downloaded from VirusTotal (349,994 ben., 399,992 mal.; random 80/10/10); temporal set: Speakeasy, 125,921 samples, 7 families, Jan 2019–Apr 2022 {RfP}",
+  "ev": {
+   "ID": "?",
+   "PRV": "P",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "?",
+   "C3": "?",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "C1 holds for the temporal component only",
+  "metric": "Score S = (P+T+R+I)/4; T = sample-weighted F1 over ten four-month bins {RfP}",
+  "fpr": "operating point fixed at 1% FPR {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "A",
+   "T"
+  ],
+  "gen_note": "ten time bins; robustness term R",
+  "artifact": "Y",
+  "artifact_note": "code repository (S6)",
+  "gap": "arXiv preprint; temporal score without evidence handling"
+ },
+ {
+  "id": "B1",
+  "group": "B",
+  "refs": [
+   8
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Static vs dynamic feature study, Dambra et al. [8]",
+  "modality": "PE; static and dynamic (sandbox) features",
+  "ml": "RF and other learners",
+  "dataset": "67,000 malware (670 families × 100) + 16,611 benign (Chocolatey); VT feed, 82 days Aug 2021–Mar 2022; AVClass2 labels {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "N",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "random 60/20/20 split",
+  "metric": "RF F1, binary: 0.957 static, 0.926 dynamic, 0.948 combined; family: 0.848 / 0.704 / 0.865 {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "label drift: 9.7% (23,171) of re-queried samples changed family after 54 days; 22% packed {RfP}",
+  "artifact": "P",
+  "artifact_note": "hash and family lists",
+  "gap": "oracle churn measured, issued outputs never re-validated"
+ },
+ {
+  "id": "B2",
+  "group": "B",
+  "refs": [
+   35
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1",
+  "technique": "Packing limits of static classifiers, Aghakhani et al. [35] (F)",
+  "modality": "PE; nine static feature families (headers, sections, imports, n-grams, strings, Rich header, …)",
+  "ml": "RF (also SVM, NN)",
+  "dataset": "Wild 50,724 (4,396 unpacked ben., 12,647 packed ben., 33,681 packed mal.); lab 341,444 packed files {RfP}",
+  "ev": {
+   "ID": "?",
+   "PRV": "P",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "N",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "random 70/30, balanced, 5 repeats",
+  "metric": "FNR 41.84% on wild packed malware when trained on the lab set {RfP}",
+  "fpr": "23.40% on 12,647 packed benign (no packed benign in training); leave-one-packer-out 43.65% (tElock), 47.49% (PECompact), 83.06% (kkrunchy) {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "A",
+   "X"
+  ],
+  "gen_note": "unseen packers; lab → wild",
+  "artifact": "Y",
+  "artifact_note": "code and Docker image (packware)",
+  "gap": "packing confounds static evidence; BODMAS carries no packer labels"
+ },
+ {
+  "id": "B3",
+  "group": "B",
+  "refs": [
+   22
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "CFG-GNN drift adaptation, Li et al. [22]",
+  "modality": "PE; control-flow graphs (disassembly), not EMBER",
+  "ml": "GNN + adversarial domain adaptation",
+  "dataset": "Big-15 (10,868 labelled mal., 9 families) + 16,000 ben.; MB-24 (MalwareBazaar, Mar–Sep 2024, 1,080–1,618 mal. per month); MalwareDrift (7 families) {RfP}",
+  "ev": {
+   "ID": "?",
+   "PRV": "P",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "?",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "mal.:ben. ≈ 0.6–1.2:1",
+  "metric": "Big-15 accuracy 98% with 20 target samples; open set: 2,396 of 2,476 unknowns detected (one new family) {RfP}",
+  "fpr": "NR; open-set evasion 1.05–4.46% {RfP}",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "T",
+   "U",
+   "X"
+  ],
+  "gen_note": "monthly MB-24; open-set new families; domain adaptation",
+  "artifact": "Y",
+  "artifact_note": "code and data (artifact appendix)",
+  "gap": "needs disassembly and GPU training; no custody or error bound"
+ },
+ {
+  "id": "B4",
+  "group": "B",
+  "refs": [
+   93
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1*",
+  "technique": "Ensemble-uncertainty conformal rejection under dataset shift, Yumlembam et al. [93]",
+  "modality": "PE; static EMBER features",
+  "ml": "GBDT/NN ensembles + inductive conformal evaluation",
+  "dataset": "EMBER, BODMAS, UCSB {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "P",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "?",
+   "C2": "?",
+   "C3": "?",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "dataset-shift protocol; C1–C3 not verified",
+  "metric": "UCSB incorrect-acceptance rate 22.8% → 16% (≈30% relative) {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "X"
+  ],
+  "gen_note": "shift across EMBER, BODMAS, UCSB",
+  "artifact": "?",
+  "artifact_note": "not verified",
+  "gap": "abstention at issue only; S10 measures κ-abstention as the safeguard that matters"
+ },
+ {
+  "id": "B5",
+  "group": "B",
+  "refs": [
+   94
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L0*",
+  "technique": "D3QN RL feature selection, Khan et al. [94]",
+  "modality": "PE (and Big2015, EMBER2024); static features",
+  "ml": "dueling double DQN feature selection + classifier",
+  "dataset": "Big2015, BODMAS, EMBER-2018, EMBER2024 {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "?",
+   "C2": "?",
+   "C3": "?",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "no temporal split reported",
+  "metric": "F1 98.64% (BODMAS), 85.07% (EMBER-2018) with ≈60 features (published abstract); arXiv version: accuracy 98.83% with 56 features {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "several datasets, no transfer",
+  "artifact": "N",
+  "artifact_note": "no link in the sources read",
+  "gap": "BODMAS F1 sits 0.61 pp above our random-split F1 and 7.66 pp above our temporal AUT {MoC vs RfP}"
+ },
+ {
+  "id": "B6",
+  "group": "B",
+  "refs": [
+   89
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1*",
+  "technique": "Regression-aware detector updating (EXE-scanner), Kozák et al. [89]",
+  "modality": "PE; static EMBER features",
+  "ml": "GBDT (EMBER-GBDT) + EXE-scanner plug-in",
+  "dataset": "Test: 5,983 goodware, 1,785 malware, 13,212 adversarial EXEmples {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "?",
+   "C2": "?",
+   "C3": "?",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "C1–C3 not reported in the sources read",
+  "metric": "Full adversarial retraining: 73 goodware and 27 malware flips (text: 30); EXE-scanner: 3 goodware, 0 malware flips {RfP}",
+  "fpr": "1% validation-FPR threshold; goodware flips 73/5,983 = 1.22% {RfP, computed}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "A"
+  ],
+  "gen_note": "adversarial EXEmples",
+  "artifact": "Y",
+  "artifact_note": "code (EXE-scanner)",
+  "gap": "flips measured, issued findings not re-opened; S10: 0.174% benign flips under monthly retraining {MoC}"
+ },
+ {
+  "id": "C1",
+  "group": "C",
+  "refs": [
+   15
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Transcend conformal evaluation [15] (F)",
+  "modality": "Android (Drebin, Marvin); Windows multiclass (Microsoft challenge); method reference",
+  "ml": "SVM + conformal evaluator",
+  "dataset": "Drebin 123,435 ben. / 5,560 mal. (2010–2012); Marvin 9,592 / 9,179 (2010–2014) {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "P",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "?",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "Marvin (2010–2014) overlaps Drebin (2010–2012); Marvin ≈49% malware {RfP, computed}",
+  "metric": "Positive-class precision 0.61–0.89 and recall 0.36–0.76 under drift {RfP}",
+  "fpr": "p-value thresholding: TPR 0.9045 at FPR 0.0007 vs 0.6654 with probabilities {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "P",
+   "X"
+  ],
+  "gen_note": "Drebin → Marvin; Windows multiclass",
+  "artifact": "Y",
+  "artifact_note": "code (project page; transcendent-release)",
+  "gap": "rejects at issue time; accepted findings are never re-opened"
+ },
+ {
+  "id": "C2",
+  "group": "C",
+  "refs": [
+   16
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Transcendent conformal rejection [16]",
+  "modality": "Android (primary); Windows PE (EMBER v2, 2017); PDF (Hidost); method reference",
+  "ml": "SVM (Android), GBDT (PE), RF (PDF) + ICE/CCE/TCE",
+  "dataset": "Android 232,848 ben. / 26,387 mal. (2014–2018); PE 47,888 ben. / 69,202 mal. (2017); PDF 181,792 / 7,163 {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "P",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "?"
+  },
+  "bias": "Y",
+  "bias_note": "Android only; PE experiment 59% malware {RfP, computed}",
+  "metric": "Android kept-element AUT(F1): CCE 0.950, approx-TCE 0.829, ICE 0.762; rejected-element F1 = 0 {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "P",
+   "T"
+  ],
+  "gen_note": "5 years; Android, PE, PDF",
+  "artifact": "Y",
+  "artifact_note": "code + Android features",
+  "gap": "issue-time only; S10: ICE abstention already holds all 142 re-scoring flips at L = 30 d {MoC}"
+ },
+ {
+  "id": "C3",
+  "group": "C",
+  "refs": [
+   17
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "CADE contrastive drift detection [17]",
+  "modality": "Android (Drebin), network (IDS2018); PE case study (20,613 malware, 395 families); method reference",
+  "ml": "contrastive autoencoder + distance-based explanation",
+  "dataset": "Drebin 3,317 samples (8 families); IDS2018 130,702 flows {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "Y",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "-",
+   "C3": "-",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "unseen-family hold-out, not temporal",
+  "metric": "Drift-sample detection on Drebin: precision 0.96, recall 0.96, F1 0.96 vs Transcend 0.76 / 0.90 / 0.80 {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "P",
+   "U"
+  ],
+  "gen_note": "unseen families; Android, NIDS, PE",
+  "artifact": "Y",
+  "artifact_note": "code",
+  "gap": "novelty detection without evidential use"
+ },
+ {
+  "id": "C4",
+  "group": "C",
+  "refs": [
+   19
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Continuous learning with active learning, Chen et al. [19]",
+  "modality": "Android (APIGraph, AndroZoo); method reference",
+  "ml": "hierarchical contrastive learning + active learning",
+  "dataset": "APIGraph 319,315 apps, 2012–2018, 10% malware, 1,118 families; AndroZoo 99,955 apps, 2019–2021 {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "?"
+  },
+  "bias": "Y",
+  "bias_note": "10% malware, monthly tests",
+  "metric": "Average FNR over 7 years 38% (no active learning) → 14% (prior method) → 9%; F1 89.23% at 50 labels per month {RfP}",
+  "fpr": "0.52% vs 0.61% for the best baseline (APIGraph, 50 labels per month) {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "T",
+   "X"
+  ],
+  "gen_note": "7 years; two datasets",
+  "artifact": "Y",
+  "artifact_note": "code",
+  "gap": "earlier verdicts not re-validated; labels assumed available"
+ },
+ {
+  "id": "C5",
+  "group": "C",
+  "refs": [
+   30
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Regression-aware continual learning (PCT), Ghiani et al. [30]",
+  "modality": "Android (Drebin, APIGraph features; opcode CNN); method reference",
+  "ml": "linear SVM, MLP, CNN; continual learning + PCT penalty",
+  "dataset": "ELSA 75,000 apps (10% malware, 2017–2019); TESSERACT Android (2014–2018); AZ-Class (100 families) {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "3-month windows split 80/20 within the window",
+  "metric": "Up to 3–6% of malware regress after model updates; PCT reduces regression by up to 50% {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "T",
+   "X"
+  ],
+  "gen_note": "continual-learning experiences; three datasets",
+  "artifact": "?",
+  "artifact_note": "no link in the version read",
+  "gap": "training-time remedy; S10: 0.023% malware regression under certified thresholds {MoC}"
+ },
+ {
+  "id": "C6",
+  "group": "C",
+  "refs": [
+   21
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Drift forensics (post-hoc XAI), Chow et al. [21]",
+  "modality": "Android (Transcendent dataset, 2014–2018); method reference",
+  "ml": "post-hoc explanation of drifting classifiers",
+  "dataset": "Transcendent Android dataset; five largest of 177 AVClass2 families {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "Y",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "Y"
+  },
+  "bias": "Y",
+  "bias_note": "inherits the TESSERACT-compliant dataset (S2 codes)",
+  "metric": "\"Most of the performance drop can be explained by the rise of two malware families\" {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "T"
+  ],
+  "gen_note": "2014–2018",
+  "artifact": "?",
+  "artifact_note": "not verified",
+  "gap": "population-level; S10: 78.1% of Jul–Sep false negatives come from seven known families {MoC}"
+ },
+ {
+  "id": "D1",
+  "group": "D",
+  "refs": [
+   11
+  ],
+  "platform": "Android",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "TESSERACT constraints and AUT [11] (F)",
+  "modality": "Android; method reference",
+  "ml": "linear SVM (DREBIN), RF (MaMaDroid), DNN",
+  "dataset": "129,728 apps (116,993 ben., 12,735 mal.), 2014–2016, 10% malware {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "?"
+  },
+  "bias": "Y",
+  "bias_note": "defines C1–C3",
+  "metric": "AUT(F1, 24 months) 0.58 / 0.32 / 0.64 vs 10-fold-CV F1 0.91 / 0.97 / 0.85 (DREBIN / MaMaDroid / DL) {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "T"
+  ],
+  "gen_note": "24 monthly tests",
+  "artifact": "Y",
+  "artifact_note": "code and data",
+  "gap": "forward evaluation only; no custody or bounded error statement"
+ },
+ {
+  "id": "D2",
+  "group": "D",
+  "refs": [
+   12
+  ],
+  "platform": "Multi",
+  "empirical": false,
+  "s2": "L2",
+  "technique": "Pitfall audit, Arp et al. [12]",
+  "modality": "cross-domain meta-study",
+  "ml": "n/a",
+  "dataset": "30 papers (ACM CCS, IEEE S&P, USENIX Security, NDSS; ten years) {RfP}",
+  "ev": {
+   "ID": "-",
+   "PRV": "-",
+   "INT": "-",
+   "XAI": "-",
+   "ERR": "-",
+   "REP": "-"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "audit",
+  "metric": "Sampling bias at least partly present in 90% and data snooping in 73% of papers; every paper has ≥ 3 pitfalls {RfP}",
+  "fpr": "base-rate fallacy (P8) in 10% {RfP}",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "Y",
+  "artifact_note": "supplementary material",
+  "gap": "no pitfall covers custody or post-issue correction"
+ },
+ {
+  "id": "E1",
+  "group": "E",
+  "refs": [
+   32
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1",
+  "technique": "Adversarial EXEmples (Full DOS, Extend, Shift) [32]",
+  "modality": "PE; raw bytes and EMBER features (targets)",
+  "ml": "attacks on MalConv, DNN-Lin, DNN-ReLU, GBDT",
+  "dataset": "104 malware from DasMalwerk; EMBER-trained targets {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "N",
+  "bias_note": "attack evaluation, no temporal protocol",
+  "metric": "Three new practical attacks evade all targets in white- and black-box settings with ≈3 KB injected {RfP}",
+  "fpr": "detection measured at 0.1% FPR {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "A"
+  ],
+  "gen_note": "white- and black-box",
+  "artifact": "Y",
+  "artifact_note": "secml-malware library",
+  "gap": "certificates assume no adversary; FNR certificates would fail silently under evasion"
+ },
+ {
+  "id": "E2",
+  "group": "E",
+  "refs": [
+   33
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1",
+  "technique": "Explanation-guided backdoor poisoning [33]",
+  "modality": "PE (EMBER, 2,351-d), PDF, Android",
+  "ml": "poisoning of LightGBM, EmberNN, RF, linear SVM",
+  "dataset": "EMBER 600,000 training samples; Contagio PDF 10,000; Drebin {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "N",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "N",
+  "bias_note": "attack evaluation",
+  "metric": "1% poisoning (6,000 points) lowers LightGBM accuracy on backdoored malware to < 3%, EmberNN to 0.75%; clean accuracy ≈99.11% {RfP}",
+  "fpr": "FP increase 0.1–0.2% {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "A",
+   "P"
+  ],
+  "gen_note": "clean-label poisoning; PE, PDF, Android",
+  "artifact": "Y",
+  "artifact_note": "code",
+  "gap": "SHAP used offensively; a ledger makes poisoning attributable after the fact, not preventable"
+ },
+ {
+  "id": "F1",
+  "group": "F",
+  "refs": [
+   55
+  ],
+  "platform": "Multi",
+  "empirical": false,
+  "s2": "L1*",
+  "technique": "AVclass2 tag extraction [55] (F)",
+  "modality": "AV labels (any platform)",
+  "ml": "none (rule-based tagging)",
+  "dataset": "42M samples across 11 datasets, 2008–2019 {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "-",
+   "ERR": "-",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "labelling tool",
+  "metric": "> 1,000 tags (894 families); family F1 74–95% on ground-truth sets {RfP}",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [
+   "X"
+  ],
+  "gen_note": "11 datasets",
+  "artifact": "Y",
+  "artifact_note": "open source",
+  "gap": "oracle version must be logged with each finding (ORC record in this work)"
+ },
+ {
+  "id": "F2",
+  "group": "F",
+  "refs": [
+   5
+  ],
+  "platform": "PE",
+  "empirical": false,
+  "s2": "L1",
+  "technique": "MOTIF report-derived family labels [5]",
+  "modality": "PE; EMBER raw features v2 + threat reports",
+  "ml": "none (reference dataset)",
+  "dataset": "3,095 disarmed PE malware, 454 families; labels from reports of 14 organisations (2016–2021); no benign files {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "-",
+   "ERR": "-",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "dataset without split",
+  "metric": "AV majority vote 62.10% and AVClass 46.78% family accuracy against report labels {RfP, arXiv version}",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "Y",
+  "artifact_note": "disarmed samples, features, reports",
+  "gap": "second family oracle, not yet used in this work"
+ },
+ {
+  "id": "F3",
+  "group": "F",
+  "refs": [
+   92
+  ],
+  "platform": "PE",
+  "empirical": false,
+  "s2": "L1*",
+  "technique": "RecMaL family-label rectification [92]",
+  "modality": "PE; static + dynamic (hybrid) analysis",
+  "ml": "family classifier (evaluation only)",
+  "dataset": "BODMAS: 57,293 malware, 581 families {RfP}",
+  "ev": {
+   "ID": "N",
+   "PRV": "Y",
+   "INT": "N",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "label study",
+  "metric": "≈20% of BODMAS malware with shifted or incorrect family labels; 300 label errors, 58 alias pairs; classifier accuracy 79.3% → 81.2% {RfP}",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "P",
+  "artifact_note": "data on request; code announced",
+  "gap": "bounds family-level claims; S10 attribution leg dropped by KB10"
+ },
+ {
+  "id": "G1",
+  "group": "G",
+  "refs": [
+   38
+  ],
+  "platform": "Generic",
+  "empirical": false,
+  "s2": "L3",
+  "technique": "Forensic-chain custody ledger [38] (F)",
+  "modality": "digital evidence items (any)",
+  "ml": "none",
+  "dataset": "proof of concept in Hyperledger Composer {RfP, S2}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "Y",
+   "XAI": "-",
+   "ERR": "-",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "no ML",
+  "metric": "no ML metric",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "?",
+  "artifact_note": "not verified",
+  "gap": "custody of evidence items, not of models, thresholds or findings"
+ },
+ {
+  "id": "G2",
+  "group": "G",
+  "refs": [
+   122
+  ],
+  "platform": "Generic",
+  "empirical": false,
+  "s2": "L3*",
+  "technique": "in-toto supply-chain attestation [122] (F)",
+  "modality": "software supply-chain artefacts",
+  "ml": "none",
+  "dataset": "30 historical supply-chain compromises; deployments incl. Debian and Datadog (> 8,000 cloud deployments) {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "Y",
+   "XAI": "-",
+   "ERR": "-",
+   "REP": "N"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "no ML",
+  "metric": "83–100% of the 30 compromises detectable depending on deployment; verification < 0.6 s; metadata ≈19% of repository size {RfP}",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "Y",
+  "artifact_note": "open source",
+  "gap": "attests build steps, not ML findings or their error statements"
+ },
+ {
+  "id": "G3",
+  "group": "G",
+  "refs": [
+   44
+  ],
+  "platform": "Generic",
+  "empirical": false,
+  "s2": "L4",
+  "technique": "Explainable digital-forensics AI, Solanke [44]",
+  "modality": "digital-forensics AI (generic)",
+  "ml": "interpretable models (position paper)",
+  "dataset": "none {S2}",
+  "ev": {
+   "ID": "-",
+   "PRV": "-",
+   "INT": "N",
+   "XAI": "Y",
+   "ERR": "N",
+   "REP": "P"
+  },
+  "c": {
+   "C1": "-",
+   "C2": "-",
+   "C3": "-",
+   "D": "-"
+  },
+  "bias": "n/a",
+  "bias_note": "no experiment",
+  "metric": "no empirical metric",
+  "fpr": "n/a",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "-",
+  "artifact_note": "n/a",
+  "gap": "no temporal validity for explanations or error rates"
+ },
+ {
+  "id": "H1",
+  "group": "H",
+  "refs": [
+   52
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L1",
+  "technique": "Static + dynamic ELM evidence analysis [52] (authors' prior work)",
+  "modality": "PE; static + dynamic (Cuckoo)",
+  "ml": "PCA + extreme learning machine",
+  "dataset": "90 malware (41 trojans, 28 worms, 21 bots) + 120 benign {RfP}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "P",
+   "INT": "P",
+   "XAI": "N",
+   "ERR": "N",
+   "REP": "P"
+  },
+  "c": {
+   "C1": "N",
+   "C2": "N",
+   "C3": "N",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "random 70/30 + stratified 5-fold CV",
+  "metric": "Macro-F1 0.88 ± 0.02; +11% precision, +10% recall, +10.5% F-score vs compared methods {RfP}",
+  "fpr": "NR",
+  "fpr_reported": false,
+  "prmcc": false,
+  "gen": [],
+  "gen_note": "—",
+  "artifact": "N",
+  "artifact_note": "no availability statement found",
+  "gap": "no temporal split or error bound; reports hashed but not chained"
+ },
+ {
+  "id": "H2",
+  "group": "H",
+  "refs": [
+   53
+  ],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2",
+  "technique": "Evidence-graph few-shot attribution [53] (authors' prior work)",
+  "modality": "PE and ELF (EMBER 2018; VirusShare APT samples via Cuckoo)",
+  "ml": "Bayesian MAML few-shot meta-learning over evidence graphs",
+  "dataset": "EMBER 2018 + VirusShare; family-disjoint zero-day split {RfP}",
+  "ev": {
+   "ID": "?",
+   "PRV": "P",
+   "INT": "N",
+   "XAI": "Y",
+   "ERR": "P",
+   "REP": "P"
+  },
+  "c": {
+   "C1": "P",
+   "C2": "?",
+   "C3": "?",
+   "D": "?"
+  },
+  "bias": "N",
+  "bias_note": "families partitioned chronologically; C2, C3 not reported",
+  "metric": "5-shot accuracy 72.9% ± 1.8; macro-F1 0.79; AUROC > 0.9 on VirusShare temporal splits; ECE 2.2% {RfP}",
+  "fpr": "5.4% at 95% TPR (baseline 7.8%) {RfP}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "U",
+   "X"
+  ],
+  "gen_note": "zero-day families; two sources",
+  "artifact": "N",
+  "artifact_note": "no availability statement found",
+  "gap": "attribution focus; no custody chain or time-indexed error statement"
+ },
+ {
+  "id": "T1",
+  "group": "T",
+  "refs": [],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2∩L3∩L4",
+  "this": true,
+  "technique": "This work: A2 (CP-certified thresholds with expiry, κ-abstention, hash-chained evidence ledger)",
+  "modality": "PE; static EMBER v2 (2,381-d)",
+  "ml": "GBDT (LightGBM f₀); 17-detector zoo incl. XGBoost, RF, ET, LR, SVM, k-NN, NB, MLP (PoC), stacking",
+  "dataset": "BODMAS 134,435 files; Dated: train 23,158 (Aug–Nov 2019), calibration 10,159 (Dec 2019), test 77,417 (Jan–Sep 2020); EMBER-2018 sub-sample 72,009 {MoC}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "Y",
+   "XAI": "Y",
+   "ERR": "Y",
+   "REP": "P"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "Y"
+  },
+  "bias": "Y",
+  "bias_note": "benign window-restricted, batch dates censored; π ∈ {0.1–10}% re-weighting and resampled streams; 7 duplicate groups logged; in-split preprocessing",
+  "metric": "f₀ pooled Mar–Sep TPR 87.94% [87.58, 88.28], F1@π=10% 93.55%, AUC-ROC 99.971%; AUT(F1@π=10%) 0.933 (f₀), 0.910 (5-seed mean); monthly FNR 4.98–24.64% {MoC}",
+  "fpr": "3/36,185 = 0.008% at the CP-certified 0.1% threshold; FPR certificate at 0.5% valid 7/7 months; uncertified 0.1% rule overran in 14/273 model-months {MoC}",
+  "fpr_reported": true,
+  "prmcc": true,
+  "gen": [
+   "T",
+   "U",
+   "X"
+  ],
+  "gen_note": "9 test months; unseen-family FNR; EMBER-2018 (0/6 valid certificates); bit-identical cross-environment re-execution {MoC}",
+  "artifact": "Y",
+  "artifact_note": "code, results, figures, sealed ledger (public release pending)",
+  "gap": "FNR certificates expire from July 2020; no adversarial certification; TSA and WORM simulated"
+ },
+ {
+  "id": "T2",
+  "group": "T",
+  "refs": [],
+  "platform": "PE",
+  "empirical": true,
+  "s2": "L2∩L3∩L4",
+  "this": true,
+  "technique": "This work: A9 budgeted re-validation of issued findings (TRACE-PE), pre-registered and withdrawn",
+  "modality": "PE; static EMBER v2 (2,381-d)",
+  "ml": "monthly LightGBM retraining; ICE credibility; domain-classifier regions",
+  "dataset": "68,876 findings issued 1 Mar–30 Sep 2020; 7 monthly updates; label delay L ∈ {30, 60, 90} d {MoC}",
+  "ev": {
+   "ID": "Y",
+   "PRV": "Y",
+   "INT": "Y",
+   "XAI": "Y",
+   "ERR": "Y",
+   "REP": "P"
+  },
+  "c": {
+   "C1": "Y",
+   "C2": "Y",
+   "C3": "Y",
+   "D": "Y"
+  },
+  "bias": "Y",
+  "bias_note": "same split; label delay and label rate varied",
+  "metric": "E^ev 90 finding-days, equal to no review (K3: 0.0% [0.0, 0.0]); yield 0.44% (3/680) vs 0.88% for lowest-margin review; 142 re-scoring flips, all among 5,141 abstained findings {MoC}",
+  "fpr": "re-scoring flipped 0.174% of benign findings (60/34,531) {MoC}",
+  "fpr_reported": true,
+  "prmcc": false,
+  "gen": [
+   "T"
+  ],
+  "gen_note": "at L = 60 d, E^ev 16.9% [4.7, 29.3] lower than with no review; lowest-margin review 96.7% lower {MoC}",
+  "artifact": "Y",
+  "artifact_note": "same package",
+  "gap": "withdrawn by K1–K3; reported as a pre-registered negative result"
+ }
+]

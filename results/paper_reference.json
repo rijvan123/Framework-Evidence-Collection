@@ -1,0 +1,1450 @@
+{
+ "description": "Values reported in the paper for the BODMAS run (configs/default.yaml). \"exact\" checkpoints are deterministic functions of the released files and the pre-registered definitions (acquisition, screen, split, Clopper-Pearson arithmetic, S7 ledger construction) and must match. \"model\" values depend on library versions, hardware and implementation details of this re-implementation; scripts/compare_to_paper.py reports their differences without judging them. Paths: <output name>:<key>/<key>/... (list indices are integers). Fractions, not percent, unless the key says otherwise.",
+ "source": "paper Tables 1-17 and the S7 design-validation probes (values measured in the paper's own run on the real BODMAS release)",
+ "exact": [
+  {
+   "what": "SHA-256 of the pre-registration (docs/PREREGISTRATION.md)",
+   "path": "e0_intake:prereg/sha256",
+   "value": "c783f8c4b160721867ff0c3903d4212efef90786cab88c2437addc2eaec199c4"
+  },
+  {
+   "what": "SHA-256 bodmas.npz",
+   "path": "e0_intake:file_sha256/bodmas.npz",
+   "value": "0a833e46c22c096920c8068d4fb54b868067777c277c0a6eecf527c98d7e5a9e"
+  },
+  {
+   "what": "SHA-256 bodmas_metadata.csv",
+   "path": "e0_intake:file_sha256/bodmas_metadata.csv",
+   "value": "5f1dc793cac4a540ef9e0c40fd7897142095621790d3c6f2d6637971806f4c50"
+  },
+  {
+   "what": "SHA-256 bodmas_malware_category.csv",
+   "path": "e0_intake:file_sha256/bodmas_malware_category.csv",
+   "value": "617fda69347ec907a79f198add431c8bb39102781de41cc03b7cd1718cff2198"
+  },
+  {
+   "what": "bytes bodmas.npz",
+   "path": "e0_intake:file_bytes/bodmas.npz",
+   "value": 261557445
+  },
+  {
+   "what": "bytes bodmas_metadata.csv",
+   "path": "e0_intake:file_bytes/bodmas_metadata.csv",
+   "value": 12705748
+  },
+  {
+   "what": "bytes bodmas_malware_category.csv",
+   "path": "e0_intake:file_bytes/bodmas_malware_category.csv",
+   "value": 4119807
+  },
+  {
+   "what": "feature matrix shape",
+   "path": "e0_intake:X/shape",
+   "value": [
+    134435,
+    2381
+   ]
+  },
+  {
+   "what": "benign rows",
+   "path": "e0_intake:y_counts/0",
+   "value": 77142
+  },
+  {
+   "what": "malware rows",
+   "path": "e0_intake:y_counts/1",
+   "value": 57293
+  },
+  {
+   "what": "family strings (raw)",
+   "path": "e0_intake:family_strings_raw",
+   "value": 582
+  },
+  {
+   "what": "family strings (case-folded)",
+   "path": "e0_intake:family_strings_casefold",
+   "value": 581
+  },
+  {
+   "what": "category trojan",
+   "path": "e0_intake:category_counts/trojan",
+   "value": 29972
+  },
+  {
+   "what": "category worm",
+   "path": "e0_intake:category_counts/worm",
+   "value": 16697
+  },
+  {
+   "what": "category backdoor",
+   "path": "e0_intake:category_counts/backdoor",
+   "value": 7331
+  },
+  {
+   "what": "non-finite values",
+   "path": "e0_intake:nonfinite_values",
+   "value": 0
+  },
+  {
+   "what": "negative-zero values",
+   "path": "e0_intake:negative_zero_values",
+   "value": 0
+  },
+  {
+   "what": "ByteHistogram rows sum to 1",
+   "path": "e0_intake:invariants/ByteHistogram_rows_sum_to_1",
+   "value": 1.0
+  },
+  {
+   "what": "control: ByteHistogram shifted +1",
+   "path": "e0_intake:invariants/shift_plus1_ByteHistogram_sum_to_1",
+   "value": 1.5e-05,
+   "tol": 1e-07
+  },
+  {
+   "what": "control: ByteEntropy shifted -1",
+   "path": "e0_intake:invariants/shift_minus1_ByteEntropy_sum_to_1",
+   "value": 0.019392,
+   "tol": 1e-07
+  },
+  {
+   "what": "SectionInfo hashed entropy integral (control)",
+   "path": "e0_intake:invariants/SectionInfo_entropy_hashed_integer",
+   "value": 6.7e-05,
+   "tol": 1e-07
+  },
+  {
+   "what": "timestamps with UTC offset",
+   "path": "e0_intake:screen/timestamp_formats/with_utc_offset",
+   "value": 130723
+  },
+  {
+   "what": "timestamps without offset",
+   "path": "e0_intake:screen/timestamp_formats/without_offset",
+   "value": 3712
+  },
+  {
+   "what": "in-window days with files (all)",
+   "path": "e0_intake:screen/spike_rule/all_k10/days_counted",
+   "value": 396
+  },
+  {
+   "what": "daily-count median (all)",
+   "path": "e0_intake:screen/spike_rule/all_k10/median",
+   "value": 297.5
+  },
+  {
+   "what": "daily-count MAD (all)",
+   "path": "e0_intake:screen/spike_rule/all_k10/mad",
+   "value": 74.5
+  },
+  {
+   "what": "spike threshold k = 10",
+   "path": "e0_intake:screen/spike_rule/all_k10/threshold",
+   "value": 1042.5
+  },
+  {
+   "what": "spike days k = 10",
+   "path": "e0_intake:screen/spike_rule/all_k10/spike_days",
+   "value": {
+    "2020-01-01": 5987,
+    "2020-02-19": 1445,
+    "2020-02-26": 2435
+   }
+  },
+  {
+   "what": "spike days k = 4",
+   "path": "e0_intake:screen/spike_rule/all_k4/spike_days",
+   "value": {
+    "2020-01-01": 5987,
+    "2020-02-19": 1445,
+    "2020-02-26": 2435,
+    "2020-06-08": 774,
+    "2020-06-30": 640
+   }
+  },
+  {
+   "what": "daily-count median (benign)",
+   "path": "e0_intake:screen/spike_rule/benign_k10/median",
+   "value": 147.0
+  },
+  {
+   "what": "daily-count MAD (benign)",
+   "path": "e0_intake:screen/spike_rule/benign_k10/mad",
+   "value": 50.0
+  },
+  {
+   "what": "stratum Dated benign",
+   "path": "e0_intake:screen/strata/Dated/benign",
+   "value": 53790
+  },
+  {
+   "what": "stratum Dated malware",
+   "path": "e0_intake:screen/strata/Dated/malware",
+   "value": 56944
+  },
+  {
+   "what": "stratum PreWindow benign",
+   "path": "e0_intake:screen/strata/PreWindow/benign",
+   "value": 13834
+  },
+  {
+   "what": "stratum PreWindow malware",
+   "path": "e0_intake:screen/strata/PreWindow/malware",
+   "value": 0
+  },
+  {
+   "what": "stratum Placeholder benign",
+   "path": "e0_intake:screen/strata/Placeholder/benign",
+   "value": 5870
+  },
+  {
+   "what": "stratum Placeholder malware",
+   "path": "e0_intake:screen/strata/Placeholder/malware",
+   "value": 0
+  },
+  {
+   "what": "stratum Bulk benign",
+   "path": "e0_intake:screen/strata/Bulk/benign",
+   "value": 3641
+  },
+  {
+   "what": "stratum Bulk malware",
+   "path": "e0_intake:screen/strata/Bulk/malware",
+   "value": 0
+  },
+  {
+   "what": "stratum SpikeMal benign",
+   "path": "e0_intake:screen/strata/SpikeMal/benign",
+   "value": 0
+  },
+  {
+   "what": "stratum SpikeMal malware",
+   "path": "e0_intake:screen/strata/SpikeMal/malware",
+   "value": 349
+  },
+  {
+   "what": "stratum Quarantine benign",
+   "path": "e0_intake:screen/strata/Quarantine/benign",
+   "value": 7
+  },
+  {
+   "what": "stratum Quarantine malware",
+   "path": "e0_intake:screen/strata/Quarantine/malware",
+   "value": 0
+  },
+  {
+   "what": "split train benign",
+   "path": "e0_intake:screen/splits/train/benign",
+   "value": 11374
+  },
+  {
+   "what": "split train malware",
+   "path": "e0_intake:screen/splits/train/malware",
+   "value": 11784
+  },
+  {
+   "what": "split calibration benign",
+   "path": "e0_intake:screen/splits/calibration/benign",
+   "value": 6120
+  },
+  {
+   "what": "split calibration malware",
+   "path": "e0_intake:screen/splits/calibration/malware",
+   "value": 4039
+  },
+  {
+   "what": "split test benign",
+   "path": "e0_intake:screen/splits/test/benign",
+   "value": 36296
+  },
+  {
+   "what": "split test malware",
+   "path": "e0_intake:screen/splits/test/malware",
+   "value": 41121
+  },
+  {
+   "what": "2019-08 dated benign",
+   "path": "e0_intake:screen/monthly/2019-08/dated_benign",
+   "value": 268
+  },
+  {
+   "what": "2019-08 dated malware",
+   "path": "e0_intake:screen/monthly/2019-08/dated_malware",
+   "value": 680
+  },
+  {
+   "what": "2019-08 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-08/fpr_ub0",
+   "value": 1.1116,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-08 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2019-08/fpr_ub1",
+   "value": 1.7578,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-08 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-08/fnr_ub0",
+   "value": 0.4396,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-09 dated benign",
+   "path": "e0_intake:screen/monthly/2019-09/dated_benign",
+   "value": 3463
+  },
+  {
+   "what": "2019-09 dated malware",
+   "path": "e0_intake:screen/monthly/2019-09/dated_malware",
+   "value": 4061
+  },
+  {
+   "what": "2019-09 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-09/fpr_ub0",
+   "value": 0.0865,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-09 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2019-09/fpr_ub1",
+   "value": 0.1369,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-09 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-09/fnr_ub0",
+   "value": 0.0737,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-10 dated benign",
+   "path": "e0_intake:screen/monthly/2019-10/dated_benign",
+   "value": 3925
+  },
+  {
+   "what": "2019-10 dated malware",
+   "path": "e0_intake:screen/monthly/2019-10/dated_malware",
+   "value": 4549
+  },
+  {
+   "what": "2019-10 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-10/fpr_ub0",
+   "value": 0.0763,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-10 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2019-10/fpr_ub1",
+   "value": 0.1208,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-10 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-10/fnr_ub0",
+   "value": 0.0658,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-11 dated benign",
+   "path": "e0_intake:screen/monthly/2019-11/dated_benign",
+   "value": 3718
+  },
+  {
+   "what": "2019-11 dated malware",
+   "path": "e0_intake:screen/monthly/2019-11/dated_malware",
+   "value": 2494
+  },
+  {
+   "what": "2019-11 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-11/fpr_ub0",
+   "value": 0.0805,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-11 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2019-11/fpr_ub1",
+   "value": 0.1275,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-11 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-11/fnr_ub0",
+   "value": 0.12,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-12 dated benign",
+   "path": "e0_intake:screen/monthly/2019-12/dated_benign",
+   "value": 6120
+  },
+  {
+   "what": "2019-12 dated malware",
+   "path": "e0_intake:screen/monthly/2019-12/dated_malware",
+   "value": 4039
+  },
+  {
+   "what": "2019-12 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-12/fpr_ub0",
+   "value": 0.0489,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-12 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2019-12/fpr_ub1",
+   "value": 0.0775,
+   "tol": 5e-05
+  },
+  {
+   "what": "2019-12 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2019-12/fnr_ub0",
+   "value": 0.0741,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-01 dated benign",
+   "path": "e0_intake:screen/monthly/2020-01/dated_benign",
+   "value": 49
+  },
+  {
+   "what": "2020-01 dated malware",
+   "path": "e0_intake:screen/monthly/2020-01/dated_malware",
+   "value": 4400
+  },
+  {
+   "what": "2020-01 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-01/fpr_ub0",
+   "value": 5.9306,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-01 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-01/fpr_ub1",
+   "value": 9.3192,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-01 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-01/fnr_ub0",
+   "value": 0.0681,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-02 dated benign",
+   "path": "e0_intake:screen/monthly/2020-02/dated_benign",
+   "value": 62
+  },
+  {
+   "what": "2020-02 dated malware",
+   "path": "e0_intake:screen/monthly/2020-02/dated_malware",
+   "value": 4030
+  },
+  {
+   "what": "2020-02 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-02/fpr_ub0",
+   "value": 4.717,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-02 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-02/fpr_ub1",
+   "value": 7.4242,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-02 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-02/fnr_ub0",
+   "value": 0.0743,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-03 dated benign",
+   "path": "e0_intake:screen/monthly/2020-03/dated_benign",
+   "value": 3577
+  },
+  {
+   "what": "2020-03 dated malware",
+   "path": "e0_intake:screen/monthly/2020-03/dated_malware",
+   "value": 4990
+  },
+  {
+   "what": "2020-03 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-03/fpr_ub0",
+   "value": 0.0837,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-03 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-03/fpr_ub1",
+   "value": 0.1326,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-03 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-03/fnr_ub0",
+   "value": 0.06,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-04 dated benign",
+   "path": "e0_intake:screen/monthly/2020-04/dated_benign",
+   "value": 5201
+  },
+  {
+   "what": "2020-04 dated malware",
+   "path": "e0_intake:screen/monthly/2020-04/dated_malware",
+   "value": 4640
+  },
+  {
+   "what": "2020-04 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-04/fpr_ub0",
+   "value": 0.0576,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-04 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-04/fpr_ub1",
+   "value": 0.0912,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-04 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-04/fnr_ub0",
+   "value": 0.0645,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-05 dated benign",
+   "path": "e0_intake:screen/monthly/2020-05/dated_benign",
+   "value": 6121
+  },
+  {
+   "what": "2020-05 dated malware",
+   "path": "e0_intake:screen/monthly/2020-05/dated_malware",
+   "value": 5449
+  },
+  {
+   "what": "2020-05 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-05/fpr_ub0",
+   "value": 0.0489,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-05 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-05/fpr_ub1",
+   "value": 0.0775,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-05 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-05/fnr_ub0",
+   "value": 0.055,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-06 dated benign",
+   "path": "e0_intake:screen/monthly/2020-06/dated_benign",
+   "value": 8182
+  },
+  {
+   "what": "2020-06 dated malware",
+   "path": "e0_intake:screen/monthly/2020-06/dated_malware",
+   "value": 4217
+  },
+  {
+   "what": "2020-06 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-06/fpr_ub0",
+   "value": 0.0366,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-06 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-06/fpr_ub1",
+   "value": 0.058,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-06 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-06/fnr_ub0",
+   "value": 0.071,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-07 dated benign",
+   "path": "e0_intake:screen/monthly/2020-07/dated_benign",
+   "value": 6392
+  },
+  {
+   "what": "2020-07 dated malware",
+   "path": "e0_intake:screen/monthly/2020-07/dated_malware",
+   "value": 4995
+  },
+  {
+   "what": "2020-07 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-07/fpr_ub0",
+   "value": 0.0469,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-07 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-07/fpr_ub1",
+   "value": 0.0742,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-07 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-07/fnr_ub0",
+   "value": 0.06,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-08 dated benign",
+   "path": "e0_intake:screen/monthly/2020-08/dated_benign",
+   "value": 2514
+  },
+  {
+   "what": "2020-08 dated malware",
+   "path": "e0_intake:screen/monthly/2020-08/dated_malware",
+   "value": 3823
+  },
+  {
+   "what": "2020-08 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-08/fpr_ub0",
+   "value": 0.1191,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-08 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-08/fpr_ub1",
+   "value": 0.1886,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-08 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-08/fnr_ub0",
+   "value": 0.0783,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-09 dated benign",
+   "path": "e0_intake:screen/monthly/2020-09/dated_benign",
+   "value": 4198
+  },
+  {
+   "what": "2020-09 dated malware",
+   "path": "e0_intake:screen/monthly/2020-09/dated_malware",
+   "value": 4577
+  },
+  {
+   "what": "2020-09 CP upper FPR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-09/fpr_ub0",
+   "value": 0.0713,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-09 CP upper FPR, 1 error (%)",
+   "path": "e0_intake:screen/monthly/2020-09/fpr_ub1",
+   "value": 0.113,
+   "tol": 5e-05
+  },
+  {
+   "what": "2020-09 CP upper FNR, 0 errors (%)",
+   "path": "e0_intake:screen/monthly/2020-09/fnr_ub0",
+   "value": 0.0654,
+   "tol": 5e-05
+  },
+  {
+   "what": "censored benign Jan 2020",
+   "path": "e0_intake:screen/monthly/2020-01/censored_benign",
+   "value": 5877
+  },
+  {
+   "what": "censored malware Jan 2020",
+   "path": "e0_intake:screen/monthly/2020-01/censored_malware",
+   "value": 110
+  },
+  {
+   "what": "censored benign Feb 2020",
+   "path": "e0_intake:screen/monthly/2020-02/censored_benign",
+   "value": 3641
+  },
+  {
+   "what": "censored malware Feb 2020",
+   "path": "e0_intake:screen/monthly/2020-02/censored_malware",
+   "value": 239
+  },
+  {
+   "what": "k* at tau = 0.001",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.001/k_star",
+   "value": 1
+  },
+  {
+   "what": "CP upper at k*, tau = 0.001 (%)",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.001/ub_at_k_star",
+   "value": 0.0775,
+   "tol": 5e-05
+  },
+  {
+   "what": "k* at tau = 0.005",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.005/k_star",
+   "value": 21
+  },
+  {
+   "what": "CP upper at k*, tau = 0.005 (%)",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.005/ub_at_k_star",
+   "value": 0.4938,
+   "tol": 5e-05
+  },
+  {
+   "what": "k* at tau = 0.01",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.01/k_star",
+   "value": 48
+  },
+  {
+   "what": "CP upper at k*, tau = 0.01 (%)",
+   "path": "e0_intake:certified_threshold_calibration/rule/0.01/ub_at_k_star",
+   "value": 0.9965,
+   "tol": 5e-05
+  },
+  {
+   "what": "empirical 0.1% rule: false positives allowed",
+   "path": "e0_intake:certified_threshold_calibration/empirical/0.001/k",
+   "value": 6
+  },
+  {
+   "what": "empirical 0.1% rule: CP upper (%)",
+   "path": "e0_intake:certified_threshold_calibration/empirical/0.001/ub",
+   "value": 0.1934,
+   "tol": 5e-05
+  },
+  {
+   "what": "unique vectors",
+   "path": "e0_intake:duplicates/unique_vectors",
+   "value": 134428
+  },
+  {
+   "what": "identical-vector groups",
+   "path": "e0_intake:duplicates/duplicate_groups",
+   "value": 7
+  },
+  {
+   "what": "groups with label conflict",
+   "path": "e0_intake:duplicates/groups_label_conflict",
+   "value": 0
+  },
+  {
+   "what": "groups spanning splits",
+   "path": "e0_intake:duplicates/groups_spanning_splits",
+   "value": 4
+  },
+  {
+   "what": "test rows whose vector occurs in train",
+   "path": "e0_intake:duplicates/test_rows_vector_in_train",
+   "value": 0
+  },
+  {
+   "what": "evaluation rows (calibration + test + censored strata)",
+   "path": "e0_intake:eval_rows",
+   "value": 97436
+  },
+  {
+   "what": "COFF audit benign rows",
+   "path": "e0_intake:coff_audit/benign/n",
+   "value": 63308
+  },
+  {
+   "what": "COFF zero, benign",
+   "path": "e0_intake:coff_audit/benign/coff_zero",
+   "value": 0.026063,
+   "tol": 1e-06
+  },
+  {
+   "what": "COFF after first-seen + 1 d, benign",
+   "path": "e0_intake:coff_audit/benign/coff_after_first_seen_plus1d",
+   "value": 0.088219,
+   "tol": 1e-06
+  },
+  {
+   "what": "COFF before 1992, malware",
+   "path": "e0_intake:coff_audit/malware/coff_before_1992",
+   "value": 0.064999,
+   "tol": 1e-06
+  },
+  {
+   "what": "acquisition-chain head (MAN0 + 134,435 ACQ records)",
+   "path": "e0_intake:ledger/acq_chain_head",
+   "value": "0dcfe96d7b4105f456131eadf57a404e2da9e5acc660bed10b0eed0d053e7939"
+  },
+  {
+   "what": "oracle Merkle root",
+   "path": "e0_intake:ledger/oracle_root",
+   "value": "7dcfe2a8d1c034fff828655a5ade3a80aa0ccc843010cbd8ebb0b6630fbbf98c"
+  },
+  {
+   "what": "June 2020 files, spike rule k = 10",
+   "path": "e2_certificates:k_sensitivity/2020-06/primary/files",
+   "value": 12399
+  },
+  {
+   "what": "June 2020 files, spike rule k = 4",
+   "path": "e2_certificates:k_sensitivity/2020-06/sensitivity/files",
+   "value": 10985
+  },
+  {
+   "what": "December calibration malware share",
+   "path": "e3_calibration:pi_cal",
+   "value": 0.3976,
+   "tol": 0.0001
+  },
+  {
+   "what": "issued findings Mar-Sep 2020 (Dated)",
+   "path": "e7_assurance:primary/frozen_none/findings",
+   "value": 68876
+  },
+  {
+   "what": "ISS records (test findings)",
+   "path": "e9_explain_issue:issuance/records",
+   "value": 77417
+  }
+ ],
+ "model": [
+  {
+   "what": "theta at tau = 0.1% (margin)",
+   "path": "e1_metrics_raw:thresholds/lgbm_trace/11/cp0.001/theta",
+   "value": 6.348,
+   "table": "Table 3"
+  },
+  {
+   "what": "theta at tau = 0.5% (margin)",
+   "path": "e1_metrics_raw:thresholds/lgbm_trace/11/cp0.005/theta",
+   "value": 2.899,
+   "table": "Table 4"
+  },
+  {
+   "what": "f0 FNR 2019-12",
+   "path": "e1_metrics:f0_monthly/2019-12/metrics/fnr",
+   "value": 0.024,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2019-12",
+   "path": "e1_metrics:f0_monthly/2019-12/metrics/fn",
+   "value": 97,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-01",
+   "path": "e1_metrics:f0_monthly/2020-01/metrics/fnr",
+   "value": 0.0407,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-01",
+   "path": "e1_metrics:f0_monthly/2020-01/metrics/fn",
+   "value": 179,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-02",
+   "path": "e1_metrics:f0_monthly/2020-02/metrics/fnr",
+   "value": 0.0586,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-02",
+   "path": "e1_metrics:f0_monthly/2020-02/metrics/fn",
+   "value": 236,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-03",
+   "path": "e1_metrics:f0_monthly/2020-03/metrics/fnr",
+   "value": 0.0651,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-03",
+   "path": "e1_metrics:f0_monthly/2020-03/metrics/fn",
+   "value": 325,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-04",
+   "path": "e1_metrics:f0_monthly/2020-04/metrics/fnr",
+   "value": 0.0498,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-04",
+   "path": "e1_metrics:f0_monthly/2020-04/metrics/fn",
+   "value": 231,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-05",
+   "path": "e1_metrics:f0_monthly/2020-05/metrics/fnr",
+   "value": 0.0507,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-05",
+   "path": "e1_metrics:f0_monthly/2020-05/metrics/fn",
+   "value": 276,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-06",
+   "path": "e1_metrics:f0_monthly/2020-06/metrics/fnr",
+   "value": 0.0562,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-06",
+   "path": "e1_metrics:f0_monthly/2020-06/metrics/fn",
+   "value": 237,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-07",
+   "path": "e1_metrics:f0_monthly/2020-07/metrics/fnr",
+   "value": 0.1676,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-07",
+   "path": "e1_metrics:f0_monthly/2020-07/metrics/fn",
+   "value": 837,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-08",
+   "path": "e1_metrics:f0_monthly/2020-08/metrics/fnr",
+   "value": 0.2464,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-08",
+   "path": "e1_metrics:f0_monthly/2020-08/metrics/fn",
+   "value": 942,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 FNR 2020-09",
+   "path": "e1_metrics:f0_monthly/2020-09/metrics/fnr",
+   "value": 0.2392,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 false negatives 2020-09",
+   "path": "e1_metrics:f0_monthly/2020-09/metrics/fn",
+   "value": 1095,
+   "table": "Table 3"
+  },
+  {
+   "what": "f0 pooled TPR (seed 11)",
+   "path": "e1_metrics:zoo/lgbm_trace/per_seed/0/tpr",
+   "value": 0.8794,
+   "table": "Table 2"
+  },
+  {
+   "what": "f0 pooled false positives (of 36,185)",
+   "path": "e1_metrics:zoo/lgbm_trace/per_seed/0/counts/fp",
+   "value": 3,
+   "table": "Table 2"
+  },
+  {
+   "what": "f0 pooled F1 at pi = 10%",
+   "path": "e1_metrics:zoo/lgbm_trace/per_seed/0/f1_pi",
+   "value": 0.9355,
+   "table": "Table 2"
+  },
+  {
+   "what": "lgbm_trace AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/lgbm_trace/agg/auc/mean",
+   "value": 0.9997,
+   "table": "Table 2"
+  },
+  {
+   "what": "lgbm_trace AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/lgbm_trace/agg/aut/mean",
+   "value": 0.91,
+   "table": "Table 2"
+  },
+  {
+   "what": "lgbm_ember AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/lgbm_ember/agg/auc/mean",
+   "value": 0.99978,
+   "table": "Table 2"
+  },
+  {
+   "what": "lgbm_ember AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/lgbm_ember/agg/aut/mean",
+   "value": 0.933,
+   "table": "Table 2"
+  },
+  {
+   "what": "xgboost AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/xgboost/agg/auc/mean",
+   "value": 0.99972,
+   "table": "Table 2"
+  },
+  {
+   "what": "xgboost AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/xgboost/agg/aut/mean",
+   "value": 0.854,
+   "table": "Table 2"
+  },
+  {
+   "what": "rf AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/rf/agg/auc/mean",
+   "value": 0.99958,
+   "table": "Table 2"
+  },
+  {
+   "what": "rf AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/rf/agg/aut/mean",
+   "value": 0.853,
+   "table": "Table 2"
+  },
+  {
+   "what": "et AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/et/agg/auc/mean",
+   "value": 0.99962,
+   "table": "Table 2"
+  },
+  {
+   "what": "et AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/et/agg/aut/mean",
+   "value": 0.892,
+   "table": "Table 2"
+  },
+  {
+   "what": "stack AUC-ROC, seed mean",
+   "path": "e1_metrics:zoo/stack/agg/auc/mean",
+   "value": 0.9998,
+   "table": "Table 2"
+  },
+  {
+   "what": "stack AUT(F1 at pi = 10%), seed mean",
+   "path": "e1_metrics:zoo/stack/agg/aut/mean",
+   "value": 0.941,
+   "table": "Table 2"
+  },
+  {
+   "what": "LGBM-TRACE TPR, seed mean",
+   "path": "e1_metrics:zoo/lgbm_trace/agg/tpr/mean",
+   "value": 0.8412,
+   "table": "Table 2"
+  },
+  {
+   "what": "LR AUC-ROC",
+   "path": "e1_metrics:zoo/lr/agg/auc/mean",
+   "value": 0.99529,
+   "table": "Table 2"
+  },
+  {
+   "what": "Gaussian NB AUC-ROC",
+   "path": "e1_metrics:zoo/gnb/agg/auc/mean",
+   "value": 0.92101,
+   "table": "Table 2"
+  },
+  {
+   "what": "EMBER-2018 published model AUC-ROC",
+   "path": "e1_metrics:zoo/ember2018_pub/agg/auc/mean",
+   "value": 0.99956,
+   "table": "Table 2"
+  },
+  {
+   "what": "violations, empirical 0.1% rule (of 273)",
+   "path": "e1_metrics:violations/emp0.001/above",
+   "value": 14,
+   "table": "Table 4"
+  },
+  {
+   "what": "violations, CP 0.1% rule (of 273)",
+   "path": "e1_metrics:violations/cp0.001/above",
+   "value": 2,
+   "table": "Table 4"
+  },
+  {
+   "what": "violations, empirical 1% rule (of 273)",
+   "path": "e1_metrics:violations/emp0.01/above",
+   "value": 44,
+   "table": "Table 4"
+  },
+  {
+   "what": "violations, CP 1% rule (of 273)",
+   "path": "e1_metrics:violations/cp0.01/above",
+   "value": 21,
+   "table": "Table 4"
+  },
+  {
+   "what": "SVR months at theta@0.5% (of 7)",
+   "path": "e2_certificates:svr/cp0.005/valid_months",
+   "value": 4,
+   "table": "Table 4"
+  },
+  {
+   "what": "SVR months at theta@0.1% (of 7)",
+   "path": "e2_certificates:svr/cp0.001/valid_months",
+   "value": 0,
+   "table": "Table 4"
+  },
+  {
+   "what": "Placeholder FPR (censored)",
+   "path": "e2_certificates:censored/Placeholder:2020-01/fpr_censored",
+   "value": 0.00187,
+   "table": "Table 5"
+  },
+  {
+   "what": "Bulk FPR (censored)",
+   "path": "e2_certificates:censored/Bulk:2020-02/fpr_censored",
+   "value": 0.0033,
+   "table": "Table 5"
+  },
+  {
+   "what": "spike-day malware FNR Feb 2020",
+   "path": "e2_certificates:spike_malware/2020-02/fnr_spike",
+   "value": 0.1925,
+   "table": "Table 5"
+  },
+  {
+   "what": "isotonic minus raw ECE (mean)",
+   "path": "e3_calibration:P4/iso_minus_raw_mean",
+   "value": 0.0209,
+   "table": "Table 7"
+  },
+  {
+   "what": "H10 Spearman rho(month, ECE)",
+   "path": "e3_calibration:H10/rho",
+   "value": 0.47,
+   "table": "Table 7"
+  },
+  {
+   "what": "random-split inflation (F1 at pi = 10%)",
+   "path": "e4_bias:random/inflation_mean",
+   "value": 0.0693,
+   "table": "Table 8"
+  },
+  {
+   "what": "static 80:20 FNR",
+   "path": "e4_bias:static/fnr",
+   "value": 0.0158,
+   "table": "Table 8"
+  },
+  {
+   "what": "static 80:20 FPR",
+   "path": "e4_bias:static/fpr",
+   "value": 0.00018,
+   "table": "Table 8"
+  },
+  {
+   "what": "COFF ablation dAUT",
+   "path": "e4_bias:coff/delta_aut_f1",
+   "value": -0.0042,
+   "table": "Table 8"
+  },
+  {
+   "what": "PreWindow arm pooled FNR",
+   "path": "e4_bias:prewindow/fnr",
+   "value": 0.084,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated LGBM-EMBER FNR low",
+   "path": "e4_bias:t0/dated:lgbm_ember/fnr_range/0",
+   "value": 0.0191,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated LGBM-EMBER FNR high",
+   "path": "e4_bias:t0/dated:lgbm_ember/fnr_range/1",
+   "value": 0.2045,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated + PreWindow LGBM-EMBER FNR low",
+   "path": "e4_bias:t0/dated_prewindow:lgbm_ember/fnr_range/0",
+   "value": 0.0119,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated + PreWindow LGBM-EMBER FNR high",
+   "path": "e4_bias:t0/dated_prewindow:lgbm_ember/fnr_range/1",
+   "value": 0.0343,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated training rows",
+   "path": "e4_bias:t0/dated:lgbm_ember/train",
+   "value": 6778,
+   "table": "Table 8"
+  },
+  {
+   "what": "T0 Dated + PreWindow training rows",
+   "path": "e4_bias:t0/dated_prewindow:lgbm_ember/train",
+   "value": 17845,
+   "table": "Table 8"
+  },
+  {
+   "what": "chi2 selection leak dAUC, LR",
+   "path": "e4_bias:leakage/arms/lr:chi2/delta_auc",
+   "value": 0.0014,
+   "table": "Table 8"
+  },
+  {
+   "what": "chi2 selection leak dAUC, linear SVM",
+   "path": "e4_bias:leakage/arms/linsvm:chi2/delta_auc",
+   "value": 0.00128,
+   "table": "Table 8"
+  },
+  {
+   "what": "LightGBM clean vs leaky z-scaling agreement",
+   "path": "e4_bias:leakage/lgbm_zscore/decision_agreement",
+   "value": 0.99903,
+   "table": "Table 8"
+  },
+  {
+   "what": "high-entropy FNR odds ratio (Eq. 19)",
+   "path": "e5_errors_drift:entropy/eq19_tau_1_32/FNR/odds_ratio",
+   "value": 1.34,
+   "table": "Table 9"
+  },
+  {
+   "what": "high-entropy malware (Eq. 19)",
+   "path": "e5_errors_drift:entropy/eq19_tau_1_32/FNR/high_n",
+   "value": 23587,
+   "table": "Table 9"
+  },
+  {
+   "what": "unseen-family malware Jul 2020",
+   "path": "e5_errors_drift:families/2020-07/unseen",
+   "value": 734,
+   "table": "Table 9"
+  },
+  {
+   "what": "P5 Spearman rho(drift, F1)",
+   "path": "e5_errors_drift:P5/rho",
+   "value": -0.32,
+   "table": "Table 10"
+  },
+  {
+   "what": "JS drift Dec 2019 (bits)",
+   "path": "e5_errors_drift:drift/2019-12/pooled",
+   "value": 0.00303,
+   "table": "Table 10"
+  },
+  {
+   "what": "monitor alarms Mar-Sep",
+   "path": "e6_monitor:KT/alarms",
+   "value": 1,
+   "table": "Table 10"
+  },
+  {
+   "what": "first monitor alarm",
+   "path": "e6_monitor:KT/alarm_days/0",
+   "value": "2020-03-15",
+   "table": "Table 10"
+  },
+  {
+   "what": "July onset week",
+   "path": "e6_monitor:KT/onset",
+   "value": "2020-07-05",
+   "table": "Table 10"
+  },
+  {
+   "what": "ACI alarms, delay 7 d",
+   "path": "e6_monitor:aci/7/alarms",
+   "value": 115,
+   "table": "Table 10"
+  },
+  {
+   "what": "ACI alarms, delay 30 d",
+   "path": "e6_monitor:aci/30/alarms",
+   "value": 92,
+   "table": "Table 10"
+  },
+  {
+   "what": "E^ev frozen_none (finding-days)",
+   "path": "e7_assurance:primary/frozen_none/E_ev",
+   "value": 56550,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev frozen_kappa_cert (finding-days)",
+   "path": "e7_assurance:primary/frozen_kappa_cert/E_ev",
+   "value": 600,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev retrain_only (finding-days)",
+   "path": "e7_assurance:primary/retrain_only/E_ev",
+   "value": 8730,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev retrain_cert (finding-days)",
+   "path": "e7_assurance:primary/retrain_cert/E_ev",
+   "value": 4740,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev retrain_kappa (finding-days)",
+   "path": "e7_assurance:primary/retrain_kappa/E_ev",
+   "value": 510,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev viii (finding-days)",
+   "path": "e7_assurance:primary/viii/E_ev",
+   "value": 90,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev trace (finding-days)",
+   "path": "e7_assurance:primary/trace/E_ev",
+   "value": 90,
+   "table": "Table 11"
+  },
+  {
+   "what": "E^ev iv_transcendent (finding-days)",
+   "path": "e7_assurance:primary/iv_transcendent/E_ev",
+   "value": 30,
+   "table": "Table 11"
+  },
+  {
+   "what": "abstained at issue (viii)",
+   "path": "e7_assurance:primary/viii/abstained",
+   "value": 5466,
+   "table": "Table 11"
+  },
+  {
+   "what": "reviews (TRACE-PE)",
+   "path": "e7_assurance:primary/trace/reviews",
+   "value": 680,
+   "table": "Table 11"
+  },
+  {
+   "what": "K2 max CP upper bound of h",
+   "path": "e7_assurance:K2/max_h_ub",
+   "value": 0.00058,
+   "table": "Table 11"
+  },
+  {
+   "what": "K3 relative reduction",
+   "path": "e7_assurance:K3/relative_reduction",
+   "value": 0.0,
+   "table": "Table 11"
+  },
+  {
+   "what": "decision",
+   "path": "e7_assurance:decision",
+   "value": "A2",
+   "table": "Table 1b"
+  },
+  {
+   "what": "flips after updates",
+   "path": "e7_assurance:flips_total/flips",
+   "value": 142,
+   "table": "Table 11"
+  },
+  {
+   "what": "harmful flips malware -> benign",
+   "path": "e7_assurance:flips_total/harmful_mal_to_ben",
+   "value": 7,
+   "table": "Table 11"
+  },
+  {
+   "what": "harmful flips benign -> malicious",
+   "path": "e7_assurance:flips_total/harmful_ben_to_mal",
+   "value": 60,
+   "table": "Table 11"
+  },
+  {
+   "what": "known families (>= 20 training files)",
+   "path": "e8_attribution:known_families",
+   "value": 68,
+   "table": "Table 12"
+  },
+  {
+   "what": "KB10 July novelty AUROC",
+   "path": "e8_attribution:KB10/auroc",
+   "value": 0.804,
+   "table": "Table 12"
+  },
+  {
+   "what": "KB10 July novelty AUPRC",
+   "path": "e8_attribution:KB10/auprc",
+   "value": 0.671,
+   "table": "Table 12"
+  },
+  {
+   "what": "KB11 Cliff delta",
+   "path": "e9_explain_issue:KB11/cliffs_delta",
+   "value": 0.168,
+   "table": "Table 13"
+  },
+  {
+   "what": "grouped TreeSHAP ms per finding",
+   "path": "e9_explain_issue:shap/ms_per_finding",
+   "value": 4.09,
+   "table": "Table 13"
+  },
+  {
+   "what": "P8 verification log-log slope",
+   "path": "e10_ledger_tests:loglog_slope",
+   "value": 0.973,
+   "table": "Table 13"
+  },
+  {
+   "what": "EMBER-2018 published model AUC (Nov-Dec 2018)",
+   "path": "e11_ember2018:published_check/auc",
+   "value": 0.99659,
+   "table": "Table 14"
+  },
+  {
+   "what": "EMBER-2018 TPR at 0.1% FPR",
+   "path": "e11_ember2018:published_check/tpr_at_0p1",
+   "value": 0.8549,
+   "table": "Table 14"
+  },
+  {
+   "what": "EMBER-2018 TPR at 1% FPR",
+   "path": "e11_ember2018:published_check/tpr_at_1",
+   "value": 0.9623,
+   "table": "Table 14"
+  },
+  {
+   "what": "EMBER-2018 random-split inflation",
+   "path": "e11_ember2018:random_inflation/mean",
+   "value": 0.1986,
+   "table": "Table 14"
+  },
+  {
+   "what": "LGBM-TRACE training seconds",
+   "path": "e12_cost_learning:timing/0/train_seconds",
+   "value": 35.8,
+   "table": "Table 16"
+  },
+  {
+   "what": "LGBM-TRACE inference us per file",
+   "path": "e12_cost_learning:timing/0/inference_us_per_file",
+   "value": 13.4,
+   "table": "Table 16"
+  },
+  {
+   "what": "Friedman chi2",
+   "path": "e13_statistics:friedman/chi2",
+   "value": 94.97,
+   "table": "Table 17"
+  },
+  {
+   "what": "Kendall W",
+   "path": "e13_statistics:friedman/kendall_w",
+   "value": 0.969,
+   "table": "Table 17"
+  }
+ ]
+}

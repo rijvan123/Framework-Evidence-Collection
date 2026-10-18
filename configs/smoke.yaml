@@ -1,0 +1,67 @@
+# Smoke test on the synthetic BODMAS-format release (scripts/make_synthetic.py). Small models and relaxed
+# tolerances so that every code path runs in minutes. NUMBERS PRODUCED WITH THIS CONFIGURATION ARE MEANINGLESS.
+run:
+  dir: runs/smoke
+  label: SYNTHETIC SMOKE DATA, numbers are meaningless
+data:
+  bodmas_dir: data/synthetic/bodmas
+  ember2018_dir: data/synthetic/ember2018
+  ember2018_model: data/synthetic/ember2018/ember_model_2018.txt
+acquisition:
+  expected_sha256: data/synthetic/bodmas/SOURCE_SHA256.json
+screen:
+  n_min_benign: 40
+  report_min_benign: 20
+seeds:
+  models: [11, 23]
+  slow_models: [11]
+  streams: [100, 101, 102]
+bootstrap_B: 100
+thresholds:
+  certified_tau: [0.05, 0.10, 0.20]
+  empirical_beta: [0.05, 0.10]
+  joint_tolerances: [[0.05, 0.25], [0.10, 0.30]]
+models:
+  lgbm_trace: {rounds: 40, num_leaves: 15}
+  lgbm_ember: {rounds: 60, num_leaves: 31, max_depth: 8, min_data_in_leaf: 10}
+  xgboost: {n_estimators: 40, max_depth: 4}
+  rf: {n_estimators: 40}
+  et: {n_estimators: 40}
+  lr: {max_iter: 300}
+  linsvm: {max_iter: 500}
+  rbfsvm: {n_train: 1200}
+  knn: {pca: 20}
+  mlp: {hidden: [32], n_train: 1500, max_iter: 30}
+  stack: {et_trees: 30}
+  select: {chi2_k: 64, ig_k: 64, mrmr_k: 32}
+monitor:
+  c2st: {rounds: 20, max_ref: 800}
+assurance:
+  tau_fpr: 0.10
+  tau_fnr: 0.30
+  noise_seeds: 2
+  pct_rounds: 20
+  gamma_grid: [0.5, 0.7, 0.9]
+  tau_H: 0.20
+attribution:
+  min_train: 5
+  lgbm: {rounds: 30, num_leaves: 7, min_data_in_leaf: 3}
+explain:
+  per_month_class: 25
+  reexec_sample: 50
+ledger_tests:
+  chain_len: 300
+  per_type: 50
+  scaling: [1000, 3000, 10000]
+bias:
+  random_seeds: [11, 23]
+  cv_models: [lgbm_trace, lr]
+  cv_trees: 20
+  scale_sub: 1000
+ember2018:
+  per_class_month: 30
+cost:
+  inference_rows: 1000
+  learning_fracs: [0.5, 1.0]
+  learning_models: [lgbm_trace, lr]
+  learning_rf_trees: 20

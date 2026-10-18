@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper and the datasets it builds on."
+title: "TRACE-PE: A Framework for Evidence Collection and Analysis of Malware Activities using Machine Learning Techniques"
+version: 1.0.0
+license: MIT
+authors:
+  - name: "[Author 1 — to be completed]"
+  - name: "[Author 2 — to be completed]"
+  - name: "[Author 3 — to be completed]"
+keywords:
+  - digital forensics
+  - malware analysis
+  - machine learning
+  - chain of custody
+  - error rates
+  - concept drift
+preferred-citation:
+  type: article
+  title: "A Framework for Evidence Collection and Analysis of Malware Activities using Machine Learning Techniques"
+  authors:
+    - name: "[Author names to be completed]"
+  journal: "[Venue to be completed]"
+  year: 2026

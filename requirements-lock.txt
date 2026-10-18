@@ -1,0 +1,29 @@
+# Exact versions used to develop and test this repository (and, for the scientific stack, the versions of the
+# paper's run: Python 3.13.16, NumPy 2.5.3, pandas 3.0.5, SciPy 1.18.1, scikit-learn 1.9.1, LightGBM 4.7.0,
+# XGBoost 3.4.1). Install with:  pip install -r requirements-lock.txt && pip install -e .
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+xgboost==3.4.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+cryptography==50.0.1
+pytest==9.1.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+python-dateutil==2.9.0.post0
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.65.0
+kiwisolver==1.5.1
+packaging==26.3
+pillow==12.3.0
+pyparsing==3.3.2
+six==1.17.0
+cffi==2.1.1
+pycparser==3.0
+iniconfig==2.3.1
+pluggy==1.7.0
+pygments==2.21.0

@@ -1,0 +1,181 @@
+# TRACE-PE configuration: the pre-registered parameters of the paper (docs/PREREGISTRATION.md, locked
+# 2026-10-06) plus implementation details the paper leaves open, marked "impl." (see
+# docs/IMPLEMENTATION_NOTES.md). Relative paths are resolved against the repository root.
+
+run:
+  dir: runs/paper
+  threads: 2
+  label: measured on this run (BODMAS)      # printed under every table and figure
+
+data:
+  bodmas_dir: data/bodmas
+  ember2018_dir: data/ember2018
+  ember2018_model: data/ember2018/ember_model_2018.txt     # published EMBER-2018 LightGBM (optional)
+
+acquisition:
+  # SHA-256 computed on the source machine before transfer (paper Section 4.3). A path to a JSON file
+  # {file: digest} is also accepted. Intake halts on a mismatch (failure mode F1).
+  expected_sha256:
+    bodmas.npz: 0a833e46c22c096920c8068d4fb54b868067777c277c0a6eecf527c98d7e5a9e
+    bodmas_metadata.csv: 5f1dc793cac4a540ef9e0c40fd7897142095621790d3c6f2d6637971806f4c50
+    bodmas_malware_category.csv: 617fda69347ec907a79f198add431c8bb39102781de41cc03b7cd1718cff2198
+  halt_on_mismatch: true
+  extractor_claim: "EMBER features.py v2 / LIEF 0.9.0 (declared by BODMAS dataset page; not re-executed)"
+
+prereg_file: docs/PREREGISTRATION.md
+
+screen:
+  window_start: "2019-08-29"
+  window_end: "2020-10-01"            # exclusive
+  spike_k: 10                         # R-T3, all-sample daily counts, unscaled MAD
+  spike_k_sensitivity: 4
+  placeholder_midnight_share: 0.99    # impl.: spike-day benign rows mostly at 00:00:00 -> Placeholder, else Bulk
+  train_end: "2019-12-01"             # exclusive
+  calibration_month: "2019-12"
+  test_start: "2020-01-01"
+  test_months: ["2020-01", "2020-09"]          # inclusive range
+  certify_months: ["2020-03", "2020-09"]       # months with >= n_min dated benign files
+  n_min_benign: 500
+  report_min_benign: 100              # FPR-dependent cells of monthly tables need at least this many benign
+  near_dup_deltas: [1.0e-6, 1.0e-4, 1.0e-2]
+  generic_family_regex: '^(small|agent|vb|trojan|kryptik|win32|downloader|worm|malware|generic|cve-.*|[a-z]{1,3}\d{4,}.*)$'   # D8
+
+seeds:
+  models: [11, 23, 37, 41, 53]
+  slow_models: [11, 23, 37]            # D14
+  f0: 11                               # the evidentiary detector f0 = LGBM-TRACE seed 11
+  streams: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119]
+  bootstrap: 20261006
+
+bootstrap_B: 1000
+
+prevalence:
+  report: 0.10                         # pi for F1, MCC and AUC-PR (assumed operating point, {Est})
+  precision: 0.01                      # pi for the precision column
+  analytic: [0.001, 0.005, 0.01, 0.02, 0.05, 0.10, 0.50]
+  streams: [0.01, 0.02, 0.05, 0.10]
+
+thresholds:
+  certified_tau: [0.001, 0.005, 0.01]  # primary = first; certificates use the first two
+  empirical_beta: [0.001, 0.01]        # the BODMAS protocol (empirical benign quantile)
+  confidence: 0.95
+  pi_star: 0.10
+  cost_ratios: [10, 50, 100]
+  cost_pis: [0.01, 0.001]
+  joint_tolerances: [[0.001, 0.02], [0.005, 0.05]]   # (tau_FPR, tau_FNR) per certified threshold
+
+models:
+  zoo: [lgbm_trace, lgbm_ember, xgboost, rf, et, lr, lr_chi2, lr_ig, lr_mrmr, lr_pca, linsvm, rbfsvm, knn, gnb, mlp, stack]
+  multi_seed: [lgbm_trace, xgboost, rf, et]
+  slow_seed: [lgbm_ember, mlp, stack]
+  lgbm_trace: {rounds: 200, num_leaves: 63, learning_rate: 0.05, feature_fraction: 0.5, bagging_fraction: 0.8, bagging_freq: 1, min_data_in_leaf: 20}
+  lgbm_ember: {rounds: 1000, num_leaves: 2048, learning_rate: 0.05, max_depth: 15, min_data_in_leaf: 50, feature_fraction: 0.5}
+  xgboost: {n_estimators: 400, max_depth: 8, learning_rate: 0.1, subsample: 0.8, colsample_bytree: 0.5}    # impl.
+  rf: {n_estimators: 300, max_features: sqrt}
+  et: {n_estimators: 300, max_features: sqrt}
+  lr: {C: 1.0, max_iter: 2000}
+  linsvm: {C: 0.1, max_iter: 5000}                                     # impl.
+  rbfsvm: {C: 1.0, gamma: scale, n_train: 10000}
+  knn: {k: 10, pca: 50}                                                # impl. (k)
+  mlp: {hidden: [256], n_train: 20000, max_iter: 50, alpha: 1.0e-4}    # impl.
+  stack: {blocks: 3, base: [lgbm_trace, et, lr], et_trees: 100}       # impl.
+  select: {chi2_k: 256, ig_k: 256, mrmr_k: 128, ig_bins: 10, pca_var: 0.95}
+
+calibration:
+  ece_bins: 15
+  label_noise: [0.01, 0.05]
+
+conformal:
+  max_abstention: 0.05                 # kappa: largest value with <= 5% December abstention
+  transcendent_rejection: 0.10         # baseline (iv), D9
+
+drift:
+  js_bins: 20
+
+monitor:
+  window_days: 7
+  persistence: 2
+  ref_start: "2019-10-01"              # model-free statistics (PSI, C2ST): 86 sliding windows
+  ref_end: "2019-12-31"
+  model_ref_month: "2019-12"           # model-dependent statistics (KS, credibility, Page-Hinkley): D1
+  start: "2020-03-01"
+  end: "2020-09-30"
+  psi_bins: 10
+  ph_delta: 0.005                      # impl.
+  c2st: {rounds: 100, num_leaves: 31, learning_rate: 0.1, folds: 2, max_ref: 6000}
+  onset_from: "2020-07-01"
+  onset_unseen_share: 0.05
+  stable_months: ["2020-03", "2020-04", "2020-05", "2020-06"]
+  kt_days: 14
+  aci: {alpha: 0.10, gamma: 0.005, delays: [7, 30]}
+
+assurance:
+  start: "2020-03-01"
+  end: "2020-09-30"
+  horizon: "2020-10-31"
+  events: ["2020-04-01", "2020-05-01", "2020-06-01", "2020-07-01", "2020-08-01", "2020-09-01", "2020-10-01"]
+  L: [30, 60, 90]
+  rho: [1.0, 0.5]
+  primary_L: 30
+  tau_fpr: 0.005
+  tau_fnr: 0.05
+  A_max: 60
+  budget_frac: 0.01
+  budget_window_days: 30
+  c_R: 10
+  omega: 1.0
+  tau_H: 0.005
+  gamma_grid: [0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99]
+  pct_rounds: 100                      # impl.: warm-start rounds of the PCT-adapted update (v)
+  noise: [0.005, 0.01, 0.02]
+  noise_seeds: 10
+  stream_pis: [0.10, 0.05]
+  block_days: 7
+  ptr: {train: ["2019-08-29", "2019-10-01"], cal: ["2019-10-01", "2019-10-16"], train1_end: "2019-10-16", cal1: ["2019-10-16", "2019-11-01"], scope_month: "2019-11"}
+
+attribution:
+  min_train: 20
+  open_percentile: 5
+  lgbm: {rounds: 150, num_leaves: 31, learning_rate: 0.05, min_data_in_leaf: 20, feature_fraction: 0.5}   # D12
+  category_classes: [trojan, worm, backdoor]
+  kb10_month: "2020-07"
+
+explain:
+  per_month_class: 430                 # 7 months x 2 classes x 430 = 6,020 findings
+  top_k: 5
+  stability_top: 3
+  reexec_sample: 1000
+  eps_num: 1.0e-9
+
+ledger_tests:
+  chain_len: 2000
+  per_type: 10000
+  scaling: [1000, 10000, 100000, 1000000]
+
+bias:
+  random_seeds: [11, 23, 37, 41, 53]
+  cv_folds: 5
+  cv_models: [lgbm_trace, xgboost, et, rf, lr, gnb]
+  cv_trees: 100
+  cv_cal_frac: 0.10
+  t0_cutoff: "2019-10-01"
+  t0_test: ["2019-10", "2020-09"]
+  t0_models: [lgbm_ember, lgbm_trace]
+  leak_models: [lr, linsvm]
+  scale_models: [dt, rf, lgbm_trace, lr, knn]
+  scale_sub: 20000
+  dt_depth: 14
+
+ember2018:
+  per_class_month: 3000
+  train_months: ["2018-01", "2018-04"]
+  cal_months: ["2018-05", "2018-06"]
+  test_months: ["2018-07", "2018-12"]
+  check_months: ["2018-11", "2018-12"]
+  seed: 11
+
+cost:
+  inference_rows: 20000
+  learning_fracs: [0.05, 0.1, 0.25, 0.5, 1.0]
+  learning_models: [lgbm_trace, rf, xgboost, lr]
+  learning_rf_trees: 100

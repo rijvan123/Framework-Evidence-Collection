@@ -1,0 +1,292 @@
+{
+ "rows_total": 31,
+ "rows_literature": 29,
+ "rows_this_work": 2,
+ "empirical_literature": 22,
+ "empirical_pe": 15,
+ "refs": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  8,
+  11,
+  12,
+  15,
+  16,
+  17,
+  19,
+  21,
+  22,
+  30,
+  32,
+  33,
+  35,
+  38,
+  44,
+  52,
+  53,
+  55,
+  88,
+  89,
+  92,
+  93,
+  94,
+  122
+ ],
+ "bias_Y_empirical": {
+  "n": 4,
+  "of": 22,
+  "ids": [
+   "C2",
+   "C4",
+   "C6",
+   "D1"
+  ]
+ },
+ "bias_Y_pe": {
+  "n": 0,
+  "of": 15,
+  "ids": []
+ },
+ "C1_Y_pe": {
+  "n": 6,
+  "of": 15,
+  "ids": [
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "A5",
+   "B3"
+  ]
+ },
+ "C3_Y_pe": {
+  "n": 0,
+  "of": 15,
+  "ids": []
+ },
+ "C3_Y_empirical": {
+  "n": 5,
+  "of": 22,
+  "ids": [
+   "C2",
+   "C4",
+   "C5",
+   "C6",
+   "D1"
+  ]
+ },
+ "D_Y_empirical": {
+  "n": 1,
+  "of": 22,
+  "ids": [
+   "C6"
+  ]
+ },
+ "INT_Y_literature": {
+  "n": 2,
+  "of": 29,
+  "ids": [
+   "G1",
+   "G2"
+  ]
+ },
+ "INT_Y_empirical": {
+  "n": 0,
+  "of": 22,
+  "ids": []
+ },
+ "ERR_Y_literature": {
+  "n": 0,
+  "of": 29,
+  "ids": []
+ },
+ "ERR_P_literature": {
+  "n": 4,
+  "of": 29,
+  "ids": [
+   "B4",
+   "C1",
+   "C2",
+   "H2"
+  ]
+ },
+ "XAI_Y_literature": {
+  "n": 4,
+  "of": 29,
+  "ids": [
+   "C3",
+   "C6",
+   "G3",
+   "H2"
+  ]
+ },
+ "REP_YP_literature": {
+  "n": 3,
+  "of": 29,
+  "ids": [
+   "G3",
+   "H1",
+   "H2"
+  ]
+ },
+ "ID_Y_literature": {
+  "n": 9,
+  "of": 29,
+  "ids": [
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "B1",
+   "F2",
+   "G1",
+   "G2",
+   "H1"
+  ]
+ },
+ "PRV_Y_literature": {
+  "n": 10,
+  "of": 29,
+  "ids": [
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "B1",
+   "F1",
+   "F2",
+   "F3",
+   "G1",
+   "G2"
+  ]
+ },
+ "fpr_reported_empirical": {
+  "n": 10,
+  "of": 22,
+  "ids": [
+   "A1",
+   "A2",
+   "A5",
+   "B2",
+   "B6",
+   "C1",
+   "C4",
+   "E1",
+   "E2",
+   "H2"
+  ]
+ },
+ "prmcc_empirical": {
+  "n": 1,
+  "of": 22,
+  "ids": [
+   "A4"
+  ]
+ },
+ "decay_empirical": {
+  "n": 8,
+  "of": 22,
+  "ids": [
+   "A2",
+   "A5",
+   "B3",
+   "C2",
+   "C4",
+   "C5",
+   "C6",
+   "D1"
+  ]
+ },
+ "adversarial_empirical": {
+  "n": 6,
+  "of": 22,
+  "ids": [
+   "A4",
+   "A5",
+   "B2",
+   "B6",
+   "E1",
+   "E2"
+  ]
+ },
+ "artifact_Y_literature": {
+  "n": 19,
+  "of": 29,
+  "ids": [
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "A5",
+   "B2",
+   "B3",
+   "B6",
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "F1",
+   "F2",
+   "G2"
+  ]
+ },
+ "artifact_P_literature": {
+  "n": 2,
+  "of": 29,
+  "ids": [
+   "B1",
+   "F3"
+  ]
+ },
+ "artifact_N_literature": {
+  "n": 3,
+  "of": 29,
+  "ids": [
+   "B5",
+   "H1",
+   "H2"
+  ]
+ },
+ "artifact_unverified_literature": {
+  "n": 4,
+  "of": 29,
+  "ids": [
+   "B4",
+   "C5",
+   "C6",
+   "G1"
+  ]
+ },
+ "biasY_and_INT_literature": {
+  "n": 0,
+  "of": 29,
+  "ids": []
+ },
+ "biasY_and_ERRY_literature": {
+  "n": 0,
+  "of": 29,
+  "ids": []
+ },
+ "INT_and_ERR_literature": {
+  "n": 0,
+  "of": 29,
+  "ids": []
+ },
+ "all_three_this_work": {
+  "n": 2,
+  "of": 2,
+  "ids": [
+   "T1",
+   "T2"
+  ]
+ },
+ "unverified_cells": 43,
+ "coded_cells": 264
+}

@@ -1,0 +1,272 @@
+{
+ "description": "Published values compared in the paper (comparison table). Units: percent. \"published\" is a value or a [low, high] range. \"measured\" names the run quantity computed by scripts/e14_compare.py (fractions, converted to percent). Delta = this work - published (percentage points); relative delta = Delta / published. Protocols differ per row as stated.",
+ "labels": {
+  "RfP": "reproduced-from-paper (or release artifact)",
+  "MoC": "measured on this run"
+ },
+ "references": {
+  "BODMAS": "L. Yang, A. Ciptadi, I. Laziuk, A. Ahmadzadeh, and G. Wang, \"BODMAS: An open dataset for learning based temporal analysis of PE malware,\" in Proc. IEEE Secur. Privacy Workshops (SPW), 2021, pp. 78-84, doi: 10.1109/SPW53761.2021.00020.",
+  "EMBER": "H. S. Anderson and P. Roth, \"EMBER: An open dataset for training static PE malware machine learning models,\" arXiv:1804.04637, 2018 (dataset paper; values from the elastic/ember release).",
+  "D3QN": "Khan, Al-Tamimi, Bermak, and Khalil, \"Adaptive malware detection using sequential feature selection: A dueling double deep Q-Network framework for intelligent classification,\" J. Inf. Secur. Appl., vol. 99, art. 104407, 2026, doi: 10.1016/j.jisa.2026.104407 (given names to be confirmed at the publisher).",
+  "Ghiani": "D. Ghiani et al., \"Regression-aware continual learning for Android malware detection,\" IEEE Trans. Inf. Forensics Security, vol. 21, pp. 6845-6854, 2026, doi: 10.1109/TIFS.2026.3714132.",
+  "Kozak": "M. Kozák, L. Demetrio, D. Trizna, and F. Roli, \"Updating Windows malware detectors: Balancing robustness and regression against adversarial EXEmples,\" Comput. Secur., vol. 155, art. 104466, 2025, doi: 10.1016/j.cose.2025.104466."
+ },
+ "comparisons": [
+  {
+   "id": "C1",
+   "metric": "Monthly F1 (%), range",
+   "source": "BODMAS Table II, EMBER-GBDT",
+   "ref": "BODMAS",
+   "published": [
+    92.14,
+    97.76
+   ],
+   "label": "RfP",
+   "measured": "ember_pub_f1_native_emp",
+   "this_work": "published EMBER-2018 model, empirical 0.1% quantile of BODMAS Dec 2019 benign, Mar-Sep 2020 Dated, native ratio",
+   "protocol": "[BODMAS]: GBDT trained on EMBER (5 seeds), threshold at 0.1% FPR on its own validation split, Oct 2019-Sep 2020; ours: the published EMBER-2018 model file."
+  },
+  {
+   "id": "C2",
+   "metric": "Monthly F1 (%), range",
+   "source": "BODMAS Table II, EMBER-GBDT",
+   "ref": "BODMAS",
+   "published": [
+    92.14,
+    97.76
+   ],
+   "label": "RfP",
+   "measured": "trace_f1_native_emp",
+   "this_work": "LGBM-TRACE, seed mean, empirical 0.1% threshold on Dec 2019",
+   "protocol": "LGBM-TRACE trained on BODMAS Aug-Nov 2019 at the operating point of [BODMAS]."
+  },
+  {
+   "id": "C3",
+   "metric": "Monthly F1 (%), range",
+   "source": "BODMAS Table II, EMBER-GBDT",
+   "ref": "BODMAS",
+   "published": [
+    92.14,
+    97.76
+   ],
+   "label": "RfP",
+   "measured": "trace_f1_native_cp",
+   "this_work": "LGBM-TRACE, seed mean, CP-certified 0.1% threshold",
+   "protocol": "LGBM-TRACE at the CP-certified 0.1% threshold."
+  },
+  {
+   "id": "C4",
+   "metric": "Monthly F1 (%), range",
+   "source": "BODMAS Table II, SOREL-GBDT",
+   "ref": "BODMAS",
+   "published": [
+    95.7,
+    98.94
+   ],
+   "label": "RfP",
+   "measured": "trace_f1_native_cp",
+   "this_work": "LGBM-TRACE, seed mean, CP-certified 0.1% threshold",
+   "protocol": "SOREL-20M-trained GBDT of [BODMAS] vs LGBM-TRACE certified."
+  },
+  {
+   "id": "C5",
+   "metric": "Monthly FNR (%), range",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": [
+    1.71,
+    7.23
+   ],
+   "label": "RfP",
+   "measured": "t0_dated:lgbm_ember_fnr",
+   "this_work": "T0 replication, Dated, LGBM-EMBER",
+   "protocol": "T0 replication: train before 2019-10-01, 80:20 random split, empirical 0.1% validation threshold, on our strata."
+  },
+  {
+   "id": "C6",
+   "metric": "Monthly FPR (%), range",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": [
+    0.0,
+    0.51
+   ],
+   "label": "RfP",
+   "measured": "t0_dated:lgbm_ember_fpr",
+   "this_work": "T0 replication, Dated, LGBM-EMBER",
+   "protocol": "As C5."
+  },
+  {
+   "id": "C7",
+   "metric": "Max monthly FNR, unseen families (%)",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": 43.04,
+   "label": "RfP",
+   "measured": "t0_dated:lgbm_ember_max_unseen",
+   "this_work": "T0 replication, Dated, LGBM-EMBER",
+   "protocol": "As C5."
+  },
+  {
+   "id": "C8",
+   "metric": "Monthly FNR (%), range",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": [
+    1.71,
+    7.23
+   ],
+   "label": "RfP",
+   "measured": "t0_dated_prewindow:lgbm_ember_fnr",
+   "this_work": "T0 replication, Dated + PreWindow, LGBM-EMBER",
+   "protocol": "T0 replication with the data composition of [BODMAS] (pre-window benign included)."
+  },
+  {
+   "id": "C9",
+   "metric": "Monthly FPR (%), range",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": [
+    0.0,
+    0.51
+   ],
+   "label": "RfP",
+   "measured": "t0_dated_prewindow:lgbm_ember_fpr",
+   "this_work": "T0 replication, Dated + PreWindow, LGBM-EMBER",
+   "protocol": "As C8."
+  },
+  {
+   "id": "C10",
+   "metric": "Max monthly FNR, unseen families (%)",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": 43.04,
+   "label": "RfP",
+   "measured": "t0_dated_prewindow:lgbm_ember_max_unseen",
+   "this_work": "T0 replication, Dated + PreWindow, LGBM-EMBER",
+   "protocol": "As C8."
+  },
+  {
+   "id": "C11",
+   "metric": "Monthly FNR (%), range",
+   "source": "BODMAS Table III",
+   "ref": "BODMAS",
+   "published": [
+    1.71,
+    7.23
+   ],
+   "label": "RfP",
+   "measured": "trace_fnr_cp",
+   "this_work": "LGBM-TRACE, seed mean, CP-certified 0.1% threshold, Jan-Sep 2020",
+   "protocol": "LGBM-TRACE certified, Jan-Sep 2020."
+  },
+  {
+   "id": "C12",
+   "metric": "F1 (%), random split",
+   "source": "BODMAS Table II, EMBER-GBDT validation",
+   "ref": "BODMAS",
+   "published": 98.62,
+   "label": "RfP",
+   "measured": "random_f1_native",
+   "this_work": "LGBM-TRACE random arm, seed mean, native ratio",
+   "protocol": "Random split inflates both; ours: BODMAS random arm."
+  },
+  {
+   "id": "C13",
+   "metric": "F1 (%)",
+   "source": "D3QN, BODMAS",
+   "ref": "D3QN",
+   "published": 98.64,
+   "label": "RfP",
+   "measured": "trace_aut_native",
+   "this_work": "LGBM-TRACE temporal AUT, seed mean, native ratio",
+   "protocol": "[D3QN] reports no temporal split; ours: temporal AUT, native ratio."
+  },
+  {
+   "id": "C14",
+   "metric": "F1 (%)",
+   "source": "D3QN, EMBER-2018",
+   "ref": "D3QN",
+   "published": 85.07,
+   "label": "RfP",
+   "measured": "within_ember_aut_cp1",
+   "this_work": "within-EMBER AUT at the second certified threshold (pi = 10%)",
+   "protocol": "Different protocol; pi = 10% re-weighting."
+  },
+  {
+   "id": "C15",
+   "metric": "AUC-ROC (%)",
+   "source": "EMBER-2018 release notebook",
+   "ref": "EMBER",
+   "published": 99.64,
+   "label": "RfP",
+   "measured": "ember_release_auc",
+   "this_work": "published EMBER-2018 model on the vectorised Nov-Dec 2018 sub-sample",
+   "protocol": "Same published model; full test set vs our stratified sub-sample."
+  },
+  {
+   "id": "C16",
+   "metric": "TPR at 0.1% FPR (%)",
+   "source": "EMBER-2018 release notebook",
+   "ref": "EMBER",
+   "published": 86.81,
+   "label": "RfP",
+   "measured": "ember_release_tpr_0p1",
+   "this_work": "published EMBER-2018 model, test-tuned threshold",
+   "protocol": "Test-tuned threshold in both."
+  },
+  {
+   "id": "C17",
+   "metric": "TPR at 0.1% FPR (%)",
+   "source": "EMBER-2017 LightGBM",
+   "ref": "EMBER",
+   "published": 92.99,
+   "label": "RfP",
+   "measured": "trace_tpr_cp_pooled",
+   "this_work": "LGBM-TRACE, seed mean, pooled Mar-Sep 2020, threshold fixed on Dec 2019",
+   "protocol": "EMBER-2017 test set with a test-tuned threshold vs LGBM-TRACE on BODMAS at a threshold fixed on December 2019."
+  },
+  {
+   "id": "C18",
+   "metric": "Malware regressing after an update (%)",
+   "source": "Ghiani et al., Android continual learning",
+   "ref": "Ghiani",
+   "published": [
+    3.0,
+    6.0
+   ],
+   "label": "RfP",
+   "measured": "malware_regress_rate",
+   "this_work": "naive re-scoring after monthly retraining (malware findings turned benign)",
+   "protocol": "[Ghiani]: continual-learning Android detectors; ours: monthly full retraining of LGBM-TRACE on BODMAS PE, findings of the 30 d before each update, abstained findings included."
+  },
+  {
+   "id": "C19",
+   "metric": "Goodware flips per update (%)",
+   "source": "Kozak et al., full adversarial training",
+   "ref": "Kozak",
+   "published": 1.22,
+   "label": "RfP, computed from counts (73/5,983)",
+   "measured": "benign_flip_rate",
+   "this_work": "naive re-scoring: benign findings turned malicious by the next monthly model",
+   "protocol": "[Kozak]: EMBER-GBDT after full adversarial retraining."
+  },
+  {
+   "id": "C20",
+   "metric": "Malware flips per update (%)",
+   "source": "Kozak et al., full adversarial training",
+   "ref": "Kozak",
+   "published": 0.18,
+   "label": "RfP, computed from counts (27/14,997; denominator uncertain)",
+   "measured": "malware_regress_rate",
+   "this_work": "naive re-scoring: malware findings turned benign by the next monthly model",
+   "protocol": "As C19; the denominator in [Kozak] is uncertain (27/14,997 = 0.18%; 27/1,785 = 1.51%)."
+  }
+ ],
+ "ember2018_release": {
+  "auc": 99.643,
+  "tpr_at_0p1": 86.81,
+  "tpr_at_1": 96.5,
+  "note": "EMBER-2018 release notebook values of the published EMBER-2018 LightGBM model on the full 200,000-file test set (RfP); used by Table 14 and Fig. 21."
+ }
+}
