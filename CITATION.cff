@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the paper and the datasets it builds on."
 title: "TRACE-PE: A Forensic Evidence Framework for Static Machine-Learning-Based Malware Detection in Windows PE Files"
 abstract: "Original run package, sealed evidence ledger, revision scripts and release verifier for the TRACE-PE study (static machine-learning detection of Windows PE malware with forensic evidence handling), plus a separately marked reimplementation."
-version: "v1.1"
+version: "v1.1.1"
 license: MIT
 type: software
 authors:

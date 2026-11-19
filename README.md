@@ -1,7 +1,7 @@
 # TRACE-PE: forensic evidence framework for static ML malware detection (Windows PE)
 
 Code, outputs and evidence ledger for R. Beg, "A Forensic Evidence Framework for Static Machine-Learning-Based Malware
-Detection in Windows PE Files" (submitted manuscript). Release v1.1 corresponds to the revised manuscript.
+Detection in Windows PE Files" (submitted manuscript). Release v1.1.1 corresponds to the revised manuscript (v1.1 lacked two execution logs).
 
 ## Contents
 
