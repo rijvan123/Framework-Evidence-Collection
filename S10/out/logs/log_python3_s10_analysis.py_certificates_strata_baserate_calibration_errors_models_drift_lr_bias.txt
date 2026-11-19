@@ -1,0 +1,21 @@
+saved certificates
+/usr/local/lib/python3.13/dist-packages/numpy/lib/_nanfunctions_impl.py:1396: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+saved strata
+saved baserate
+saved calibration
+saved errors
+saved models
+drift 2019-12 0.003
+drift 2020-01 0.0158
+drift 2020-02 0.0193
+drift 2020-03 0.0053
+drift 2020-04 0.0041
+drift 2020-05 0.008
+drift 2020-06 0.0114
+drift 2020-07 0.0087
+drift 2020-08 0.0101
+drift 2020-09 0.0048
+saved drift
+saved lr
+saved bias
