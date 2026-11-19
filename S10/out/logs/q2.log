@@ -1,0 +1,44 @@
+=== 12:22:46 START python3 s10_reval.py sim 30 1.0
+=== 12:28:32 END python3 s10_reval.py sim 30 1.0 rc=0
+=== 12:28:32 START python3 s10_e1_run.py et 23
+=== 12:29:25 END python3 s10_e1_run.py et 23 rc=0
+=== 12:29:25 START python3 s10_e1_run.py et 37
+=== 12:30:19 END python3 s10_e1_run.py et 37 rc=0
+=== 12:30:19 START python3 s10_e1_run.py et 41
+=== 12:31:16 END python3 s10_e1_run.py et 41 rc=0
+=== 12:31:16 START python3 s10_e1_run.py et 53
+=== 12:32:45 END python3 s10_e1_run.py et 53 rc=0
+=== 12:32:45 START python3 s10_e1_run.py rf 11
+=== 12:33:54 END python3 s10_e1_run.py rf 11 rc=0
+=== 12:33:54 START python3 s10_e1_run.py rf 23
+=== 12:34:58 END python3 s10_e1_run.py rf 23 rc=0
+=== 12:34:58 START python3 s10_e1_run.py rf 37
+=== 12:36:00 END python3 s10_e1_run.py rf 37 rc=0
+=== 12:36:00 START python3 s10_e1_run.py rf 41
+=== 12:37:03 END python3 s10_e1_run.py rf 41 rc=0
+=== 12:37:03 START python3 s10_e1_run.py rf 53
+=== 12:38:05 END python3 s10_e1_run.py rf 53 rc=0
+=== 12:38:05 START python3 s10_e5_bias.py random
+=== 12:42:58 END python3 s10_e5_bias.py random rc=0
+=== 12:42:58 START python3 s10_e5_bias.py t0
+./run_q2.sh: line 6:  2011 Killed                  "$@" > /home/claude/s10/out/log_$(echo "$*" | tr ' /' '__').txt 2>&1
+=== 12:43:04 END python3 s10_e5_bias.py t0 rc=0
+=== 12:43:04 START python3 s10_e5_bias.py no626
+=== 12:43:47 END python3 s10_e5_bias.py no626 rc=0
+=== 12:43:47 START python3 s10_e5_bias.py prewin
+=== 12:44:48 END python3 s10_e5_bias.py prewin rc=0
+=== 12:44:48 START python3 s10_e1_eval.py
+=== 12:46:24 END python3 s10_e1_eval.py rc=0
+=== 12:46:24 START python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias
+=== 12:46:24 END python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias rc=0
+=== 12:46:24 START python3 s10_attr.py
+=== 12:49:42 END python3 s10_attr.py rc=0
+=== 12:49:42 START python3 s10_explain.py
+=== 12:56:52 END python3 s10_explain.py rc=0
+=== 12:56:52 START python3 s10_ledger_tests.py
+=== 12:57:06 END python3 s10_ledger_tests.py rc=0
+=== 12:57:06 START python3 s10_ember.py
+=== 13:04:39 END python3 s10_ember.py rc=0
+=== 13:04:39 START python3 s10_lc_timing.py lc
+=== 13:11:38 END python3 s10_lc_timing.py lc rc=0
+=== 13:11:38 START python3 s10_e1_run.py lgbm_ember 11

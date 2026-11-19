@@ -1,0 +1,1 @@
+{"model": "et", "seed": 53, "fit_s": 79.578, "pred_us": 75.144, "rss_gb": 1.671, "n_train": 23158, "n_scored": 97436, "ident": "05df705a8d64ff412d1602ac5ed5a24dab9c035d5492e8ea095d93135bc57d82", "model_obj": "05df705a8d64ff412d1602ac5ed5a24dab9c035d5492e8ea095d93135bc57d82"}

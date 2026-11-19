@@ -1,0 +1,14 @@
+/usr/local/lib/python3.13/dist-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 500 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=500).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+norm raw
+norm minmax
+norm zscore
+{'dt|raw_vs_minmax': {'disagree': 489, 'n': 77417, 'agreement': 0.9936835578748854}, 'dt|raw_vs_zscore': {'disagree': 305, 'n': 77417, 'agreement': 0.9960602968340287}, 'rf|raw_vs_minmax': {'disagree': 183, 'n': 77417, 'agreement': 0.9976361781004173}, 'rf|raw_vs_zscore': {'disagree': 131, 'n': 77417, 'agreement': 0.9983078651975664}, 'lgbm|raw_vs_minmax': {'disagree': 75, 'n': 77417, 'agreement': 0.9990312205329579}, 'lgbm|raw_vs_zscore': {'disagree': 82, 'n': 77417, 'agreement': 0.9989408011160339}, 'lr|raw_vs_zscore': {'disagree': 3231, 'n': 20000, 'agreement': 0.83845}, 'knn|raw_vs_zscore': {'disagree': 2315, 'n': 20000, 'agreement': 0.88425}}
+saved /home/claude/s10/out/e5_norm.json

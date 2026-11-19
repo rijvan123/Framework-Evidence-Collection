@@ -1,0 +1,87 @@
+{
+ "fig5_metric_bars": {
+  "caption": "Per-model detection metrics on the pooled March–September 2020 test stream (Dated stratum), threshold certified at τ_FPR = 0.1% on December 2019 (k* = 1). π-dependent metrics use the Eq. (70) re-weighting to π = 10%. Bars or dots: mean over model seeds (dots where the axis cannot start at zero: AUC-PR, AUC-ROC, log FPR; \"0\" = no false positive); whiskers: min–max over the seeds (multi-seed models) or the 95% stratified bootstrap CI (single fits; DeLong for AUC). Orange: LGBM-TRACE, the f₀ family.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig6_roc_pr": {
+  "caption": "Multi-model ROC (log FPR axis; grey: remaining models, incl. k-NN, LR variants, linear SVM) and precision–recall curves on the pooled March–September 2020 test stream. PR curves are computed with benign weights κ (Eq. 70) so that the effective prevalence is π = 10% (centre) and π = 1% (right). Vertical rules mark FPR = 0.1% and 1%. Seed 11 (stochastic) or the single fit (deterministic).",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig7_confusion": {
+  "caption": "Confusion matrices on the pooled March–September 2020 stream (36,185 benign, 32,691 malware). Top: the evidentiary detector f₀ (LGBM-TRACE, seed 11) at the CP-certified threshold (τ_FPR = 0.1%, k* = 1) as measured counts, as expected counts per 10,000 files at deployment prevalence π = 10% and 1% (analytic from the measured TPR and FPR), and at the default threshold p = 0.5. Bottom: comparators at their own certified thresholds (seed 11 or single fit). Cell shading = row-normalised rate.",
+  "label": "measured-on-Claude (counts); derived from measured rates (per-10,000 panels)",
+  "note": ""
+ },
+ "fig8_temporal_decay": {
+  "caption": "Temporal decay under the TESSERACT protocol (train Aug–Nov 2019, calibrate Dec 2019, test monthly). Threshold certified at τ_FPR = 0.1% on December. Lines: seed mean; shaded band: min–max over the model seeds (multi-seed models). Left: FNR for every test month (Jan–Feb carry only 49 and 62 dated benign samples, so F1 is not reported there). Right: F1 at π = 10% (Eq. 70) with AUT (Eq. 69) over the seven months in the legend.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig9_certificates": {
+  "caption": "Time-indexed error certificates of f₀ (Eq. S7.4): monthly point estimates and one-sided 95% Clopper–Pearson upper bounds for FPR (left) and FNR (right), with the threshold certified on December 2019 at τ_FPR = 0.1% (k* = 1) and 0.5% (k* = 21). Horizontal rules: tolerances τ.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig10_base_rate": {
+  "caption": "Base-rate sensitivity of f₀: precision versus deployment prevalence π. Curves: Eq. (55) evaluated with each month's measured TPR and FPR; points (left): mean and 2.5–97.5 percentiles over 20 prevalence-resampled streams at π ∈ {1, 2, 5, 10}%. The certified threshold keeps PPV high at low π because realised FPR is 0–3 per 10⁴ benign files; the default threshold collapses PPV in March–April.",
+  "label": "measured-on-Claude (points); analytic from measured rates (curves)",
+  "note": ""
+ },
+ "fig11_drift": {
+  "caption": "Feature drift relative to the training window (Aug–Nov 2019): per-group Jensen–Shannon divergence on 20 training-quantile bins (Eqs. 74–75) for December 2019 and each 2020 month (left; January–February values are inflated by the 49 and 62 dated benign files), and global drift 𝒟(t) against f₀'s monthly F1 at π = 10% over March–September (right; P5).",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig12_monitor": {
+  "caption": "Label-free monitor M8 on weekly windows from 1 March 2020 (f₀, predicted-class conditioning, COFF column excluded). Thin horizontal lines: alarm thresholds λ = maximum over the blocked null (86 Oct–Dec windows for C2ST/PSI; 25 December windows for KS/credibility; December daily series for Page–Hinkley). Red rule: July onset week (unseen-family share > 5%). Every test window exceeds at least one λ, so the monitor cannot separate the July event from ordinary non-stationarity (trigger kill KT met).",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig13_importance": {
+  "caption": "Feature importance of f₀. Left: mean absolute grouped TreeSHAP (exact, LightGBM pred_contrib) per EMBER v2 group on 6,020 month×class-stratified March–September findings. Centre: share of importance per group under three measures (|SHAP|, LightGBM gain, LR |coefficient| on signed-log standardised inputs). Right: top-15 features by gain; index = EMBER v2 column, offset = position inside its group.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig19_ledger": {
+  "caption": "Evidence-ledger integrity (P8): wall-clock time of a full hash-chain verification for n ∈ {10³, …, 10⁶} records (left; log–log slope) and detection of injected modifications in a 2,000-record chain (right).",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig17_assurance": {
+  "caption": "Assurance-plane simulation on the native Dated stream (issuance 1 Mar–30 Sep 2020, horizon 31 Oct; label delay L = 30 d; τ_FPR = 0.5%, τ_FNR = 5%; budget B = 1% of the previous 30 days' issuances; calendar events 1 Apr–1 Oct). Left: daily count of erroneous findings in evaluative states for cumulative safeguards. Centre: total evaluative exposure with 95% day-block bootstrap CIs (log scale). Right: exposure under analyst label noise; reviewed findings are never reconciled under S7 Algorithm 6, so analyst errors persist unless the oracle overrides the analyst at maturity.",
+  "label": "measured-on-Claude (simulation on real BODMAS scores and labels)",
+  "note": ""
+ },
+ "fig14_cost": {
+  "caption": "CPU cost per model on the S7 training window (23,158 × 2,381; 2 vCPU Intel Xeon 2.1 GHz): wall-clock training time, inference time per file (20,000 evaluation rows) and process peak RSS, from an uncontended sequential timing run (one seed per model). The published EMBER-2018 model is scored only. RBF-SVM: E1 run on its 10,000-row sub-sample.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig15_learning": {
+  "caption": "Learning curves on stratified sub-samples (5–100%) of the training window, evaluated on the pooled March–September 2020 stream: AUC-PR at π = 10% (thick) with in-sample training AUC (thin), FNR at the CP-certified 0.1% threshold fitted on December, and wall-clock fit time.",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig18_attribution": {
+  "caption": "Attribution leg (secondary). LightGBM multiclass on families with ≥ 20 training samples (generic AV tokens excluded, D8); monthly top-k accuracy on known families and on all non-generic malware with the closed-world bound (left), macro-F1 with and without open-set rejection at the December 5th-percentile max-probability threshold (centre), and detection of unseen families by 1 − max p (right). Family labels carry a ±20 pp oracle-uncertainty band (RecMaL [92]).",
+  "label": "measured-on-Claude",
+  "note": ""
+ },
+ "fig21_ember2018": {
+  "caption": "EMBER-2018 corroboration (D10). Left: FNR at a CP-certified 0.1% FPR threshold by test month for f₀ on BODMAS, for the same pipeline trained and tested inside EMBER-2018 (month-stratified sub-sample), and for the EMBER-trained detector applied forward to BODMAS 2020. Centre: random-split inflation of F1 at π = 10% over the temporal AUT (5 seeds; 95% CI). Right: pipeline check with the published EMBER-2018 model, release-notebook values (full test set) versus this vectorisation (stratified sub-sample).",
+  "label": "measured-on-Claude (orange/centre/left); reproduced from the EMBER release notebook (blue dots, right)",
+  "note": ""
+ },
+ "fig20_comparison": {
+  "caption": "Comparison with published results. Blue: reproduced-from-paper (RfP) values as reported (BODMAS [1] Tables II–III; D3QN [94]); orange: measured-on-Claude (MoC) under this paper's protocol (Dated stratum; thresholds fitted on December 2019; months March–September 2020 for F1, January–September for FNR; LGBM-TRACE values are 5-seed means). Protocols differ (training data, months, operating point), so the comparison shows magnitudes, not a like-for-like ranking; the T0 rows replicate [1]'s Table III protocol on our strata. Right: dot plot (axis does not start at zero).",
+  "label": "reproduced-from-paper (blue); measured-on-Claude (orange)",
+  "note": ""
+ },
+ "fig16_cv_vs_temporal": {
+  "caption": "Distribution of F1 at π = 10% and FNR under random stratified 5-fold cross-validation of the pooled Dated stream (biased arm; certified threshold on a 10% calibration hold-out per fold) versus the temporal protocol (monthly values, March–September 2020; seed mean). Box: inter-quartile range; points: folds or months. ET and RF use 100 trees in the CV arm.",
+  "label": "measured-on-Claude",
+  "note": ""
+ }
+}

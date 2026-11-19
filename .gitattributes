@@ -1,0 +1,3 @@
+# Store every file byte for byte: the evidence ledger binds the files in S10/ by SHA-256,
+# so no line-ending conversion may be applied.
+* -text

@@ -1,0 +1,341 @@
+{
+ "theta0": 6.34765875299057,
+ "kstar": 1,
+ "kappa": 0.050318575396177095,
+ "sample": 6020,
+ "shap_seconds_5models": 74.57875558999967,
+ "shap_ms_per_finding": 4.086424578180458,
+ "local_accuracy_max_resid": 4.263256414560601e-14,
+ "importance": {
+  "mean_abs": {
+   "ByteHistogram": 1.0792564736171333,
+   "ByteEntropyHistogram": 0.2723915952702945,
+   "StringExtractor": 1.1418658082126862,
+   "GeneralFileInfo": 0.3847915662238497,
+   "HeaderFileInfo": 2.6741452583115346,
+   "SectionInfo": 0.7490111169611111,
+   "ImportsInfo": 0.7962464374542821,
+   "ExportsInfo": 0.002277492716493922,
+   "DataDirectories": 2.4031968276397206
+  },
+  "mean_signed_mal": {
+   "ByteHistogram": 0.7963200058334959,
+   "ByteEntropyHistogram": 0.21087507741162623,
+   "StringExtractor": 1.0590798134258828,
+   "GeneralFileInfo": 0.3161267978288891,
+   "HeaderFileInfo": 2.41937351905763,
+   "SectionInfo": 0.5430071364867329,
+   "ImportsInfo": 0.549304373227611,
+   "ExportsInfo": 0.001006173756898103,
+   "DataDirectories": 2.350933731792753
+  },
+  "mean_signed_ben": {
+   "ByteHistogram": -0.9496904504438939,
+   "ByteEntropyHistogram": -0.21609383755715153,
+   "StringExtractor": -1.0578370970638453,
+   "GeneralFileInfo": -0.38073411163415344,
+   "HeaderFileInfo": -2.6336108430691327,
+   "SectionInfo": -0.6864239434227337,
+   "ImportsInfo": -0.9383605790977735,
+   "ExportsInfo": -0.002940758686341137,
+   "DataDirectories": -2.324482782502446
+  },
+  "by_month": {
+   "2020-03": {
+    "ByteHistogram": 1.1842340977820451,
+    "ByteEntropyHistogram": 0.27361533181064773,
+    "StringExtractor": 1.1592794184953277,
+    "GeneralFileInfo": 0.3714628927390252,
+    "HeaderFileInfo": 2.820620999894235,
+    "SectionInfo": 0.6772253871989966,
+    "ImportsInfo": 0.8036048368209173,
+    "ExportsInfo": 0.002180085057653254,
+    "DataDirectories": 2.3295695421341835
+   },
+   "2020-04": {
+    "ByteHistogram": 1.1371381517854429,
+    "ByteEntropyHistogram": 0.2631275146212861,
+    "StringExtractor": 1.18769876387228,
+    "GeneralFileInfo": 0.3824867234393199,
+    "HeaderFileInfo": 2.6094434904009303,
+    "SectionInfo": 0.7330923949770741,
+    "ImportsInfo": 0.8464901913452799,
+    "ExportsInfo": 0.0019196410293323611,
+    "DataDirectories": 2.440992600510654
+   },
+   "2020-05": {
+    "ByteHistogram": 1.035842574241651,
+    "ByteEntropyHistogram": 0.2812857316986576,
+    "StringExtractor": 1.1107804440665365,
+    "GeneralFileInfo": 0.4033058980518673,
+    "HeaderFileInfo": 2.493132887244873,
+    "SectionInfo": 0.8465053778353201,
+    "ImportsInfo": 0.7838300505531792,
+    "ExportsInfo": 0.0022002419944526794,
+    "DataDirectories": 2.6548549125448697
+   },
+   "2020-06": {
+    "ByteHistogram": 1.0725887376777794,
+    "ByteEntropyHistogram": 0.2801243515501706,
+    "StringExtractor": 1.1535437104129271,
+    "GeneralFileInfo": 0.393180619347285,
+    "HeaderFileInfo": 2.5432125599033544,
+    "SectionInfo": 0.8554605273864648,
+    "ImportsInfo": 0.8445262301571663,
+    "ExportsInfo": 0.0022215072294524472,
+    "DataDirectories": 2.497600632645118
+   },
+   "2020-07": {
+    "ByteHistogram": 1.0245278039993038,
+    "ByteEntropyHistogram": 0.2527886140362752,
+    "StringExtractor": 1.2510103631622627,
+    "GeneralFileInfo": 0.41866355950384493,
+    "HeaderFileInfo": 2.2707118607367676,
+    "SectionInfo": 0.7372243357110752,
+    "ImportsInfo": 0.8550443859023562,
+    "ExportsInfo": 0.002261540267347191,
+    "DataDirectories": 2.5307077787217374
+   },
+   "2020-08": {
+    "ByteHistogram": 1.1152653492838698,
+    "ByteEntropyHistogram": 0.2774638143944902,
+    "StringExtractor": 1.1001175781757273,
+    "GeneralFileInfo": 0.359704730943848,
+    "HeaderFileInfo": 3.0695285354340465,
+    "SectionInfo": 0.6897881239187028,
+    "ImportsInfo": 0.7198825183238218,
+    "ExportsInfo": 0.0026187156461242615,
+    "DataDirectories": 2.0989477233720115
+   },
+   "2020-09": {
+    "ByteHistogram": 0.9851986005498408,
+    "ByteEntropyHistogram": 0.278335808780534,
+    "StringExtractor": 1.030630379303741,
+    "GeneralFileInfo": 0.36473653954175694,
+    "HeaderFileInfo": 2.9123664745665367,
+    "SectionInfo": 0.7037816717001438,
+    "ImportsInfo": 0.7203468490772532,
+    "ExportsInfo": 0.002540717791095256,
+    "DataDirectories": 2.2697046035494686
+   }
+  }
+ },
+ "KB11": {
+  "mean_jaccard_correct": 0.906240481671684,
+  "mean_jaccard_wrong": 0.8562734584450403,
+  "n_wrong": 373,
+  "cliffs_delta": 0.16763604580666572,
+  "gate": true
+ },
+ "faithfulness": {
+  "mean_spearman": 0.6161370868039994,
+  "median_spearman": 0.7,
+  "mean_abs_delta_margin": {
+   "ByteHistogram": 1.0235361078941778,
+   "ByteEntropyHistogram": 0.30666081710113946,
+   "StringExtractor": 1.086754538768586,
+   "GeneralFileInfo": 0.27212028637710334,
+   "HeaderFileInfo": 1.7002410063083029,
+   "SectionInfo": 0.6676556757448638,
+   "ImportsInfo": 0.6050842474190747,
+   "ExportsInfo": 0.00015685690829913047,
+   "DataDirectories": 1.1343199335972622
+  }
+ },
+ "gain_group": {
+  "ByteHistogram": 0.08612298358776113,
+  "ByteEntropyHistogram": 0.03206192329831083,
+  "StringExtractor": 0.136841401158121,
+  "GeneralFileInfo": 0.03604972275819144,
+  "HeaderFileInfo": 0.36551747121163236,
+  "SectionInfo": 0.030846987280963405,
+  "ImportsInfo": 0.09685262932066194,
+  "ExportsInfo": 7.800316352581742e-05,
+  "DataDirectories": 0.2156288782208321
+ },
+ "top_features": [
+  {
+   "index": 658,
+   "group": "HeaderFileInfo",
+   "offset": 32,
+   "gain_share": 0.21482045792712728
+  },
+  {
+   "index": 2359,
+   "group": "DataDirectories",
+   "offset": 8,
+   "gain_share": 0.08832469324058484
+  },
+  {
+   "index": 613,
+   "group": "StringExtractor",
+   "offset": 101,
+   "gain_share": 0.06811479130335758
+  },
+  {
+   "index": 637,
+   "group": "HeaderFileInfo",
+   "offset": 11,
+   "gain_share": 0.050007831729619735
+  },
+  {
+   "index": 2360,
+   "group": "DataDirectories",
+   "offset": 9,
+   "gain_share": 0.044641030504030815
+  },
+  {
+   "index": 626,
+   "group": "HeaderFileInfo",
+   "offset": 0,
+   "gain_share": 0.028383933347104574
+  },
+  {
+   "index": 2375,
+   "group": "DataDirectories",
+   "offset": 24,
+   "gain_share": 0.027803778942543798
+  },
+  {
+   "index": 611,
+   "group": "StringExtractor",
+   "offset": 99,
+   "gain_share": 0.02242193384224213
+  },
+  {
+   "index": 623,
+   "group": "GeneralFileInfo",
+   "offset": 7,
+   "gain_share": 0.020465791662456594
+  },
+  {
+   "index": 1411,
+   "group": "ImportsInfo",
+   "offset": 468,
+   "gain_share": 0.01794050008375807
+  },
+  {
+   "index": 655,
+   "group": "HeaderFileInfo",
+   "offset": 29,
+   "gain_share": 0.016733374239547252
+  },
+  {
+   "index": 683,
+   "group": "HeaderFileInfo",
+   "offset": 57,
+   "gain_share": 0.01641098325754886
+  },
+  {
+   "index": 2364,
+   "group": "DataDirectories",
+   "offset": 13,
+   "gain_share": 0.013797709549017417
+  },
+  {
+   "index": 660,
+   "group": "HeaderFileInfo",
+   "offset": 34,
+   "gain_share": 0.013604843959455814
+  },
+  {
+   "index": 2355,
+   "group": "DataDirectories",
+   "offset": 4,
+   "gain_share": 0.013379377105234753
+  },
+  {
+   "index": 1254,
+   "group": "ImportsInfo",
+   "offset": 311,
+   "gain_share": 0.010526698775784838
+  },
+  {
+   "index": 2351,
+   "group": "DataDirectories",
+   "offset": 0,
+   "gain_share": 0.009299771226772632
+  },
+  {
+   "index": 1695,
+   "group": "ImportsInfo",
+   "offset": 752,
+   "gain_share": 0.009048524939789696
+  },
+  {
+   "index": 615,
+   "group": "StringExtractor",
+   "offset": 103,
+   "gain_share": 0.008005090061161407
+  },
+  {
+   "index": 40,
+   "group": "ByteHistogram",
+   "offset": 40,
+   "gain_share": 0.007545977350518978
+  },
+  {
+   "index": 95,
+   "group": "ByteHistogram",
+   "offset": 95,
+   "gain_share": 0.006922254601804706
+  },
+  {
+   "index": 618,
+   "group": "GeneralFileInfo",
+   "offset": 2,
+   "gain_share": 0.006793624840799106
+  },
+  {
+   "index": 1416,
+   "group": "ImportsInfo",
+   "offset": 473,
+   "gain_share": 0.005560569223963813
+  },
+  {
+   "index": 2352,
+   "group": "DataDirectories",
+   "offset": 1,
+   "gain_share": 0.005463257757998587
+  },
+  {
+   "index": 578,
+   "group": "StringExtractor",
+   "offset": 66,
+   "gain_share": 0.005394474583675078
+  }
+ ],
+ "lr_group": {
+  "ByteHistogram": 0.10767663270235062,
+  "ByteEntropyHistogram": 0.09992218017578125,
+  "StringExtractor": 0.06524372845888138,
+  "GeneralFileInfo": 0.011084547266364098,
+  "HeaderFileInfo": 0.043267033994197845,
+  "SectionInfo": 0.09264674037694931,
+  "ImportsInfo": 0.5275817513465881,
+  "ExportsInfo": 0.026001613587141037,
+  "DataDirectories": 0.026575805619359016
+ },
+ "iss_records": 77417,
+ "iss_seconds": 340.7484442169998,
+ "abstained": null,
+ "V1": {
+  "ok": true,
+  "first_bad": -1,
+  "n": 211960,
+  "seconds": 2.1286
+ },
+ "V2": {
+  "objects_checked": 28,
+  "failures": 0,
+  "seconds": 2.18
+ },
+ "V3": {
+  "n": 1000,
+  "vector_hash_match": 1000,
+  "margin_bit_identical": 1000,
+  "shap_local_accuracy_ok": 1000,
+  "seconds": 4.75
+ },
+ "seconds": 428.3
+}

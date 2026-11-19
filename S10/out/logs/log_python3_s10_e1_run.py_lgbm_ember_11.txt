@@ -1,0 +1,1 @@
+{"model": "lgbm_ember", "seed": 11, "fit_s": 142.712, "pred_us": 117.71, "rss_gb": 2.77, "n_train": 23158, "n_scored": 97436, "ident": "17209381a814d4474709c2dcccdd0dae3b55740fbfac200cb46c1938e897a669", "model_obj": "434bad02c2dd8e1688bb414d8f715434d7bec862bd50f1d80a6c58864e34733d", "trees": 1000}

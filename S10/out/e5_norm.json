@@ -1,0 +1,45 @@
+{
+ "exp": "norm",
+ "agreement": {
+  "dt|raw_vs_minmax": {
+   "disagree": 489,
+   "n": 77417,
+   "agreement": 0.9936835578748854
+  },
+  "dt|raw_vs_zscore": {
+   "disagree": 305,
+   "n": 77417,
+   "agreement": 0.9960602968340287
+  },
+  "rf|raw_vs_minmax": {
+   "disagree": 183,
+   "n": 77417,
+   "agreement": 0.9976361781004173
+  },
+  "rf|raw_vs_zscore": {
+   "disagree": 131,
+   "n": 77417,
+   "agreement": 0.9983078651975664
+  },
+  "lgbm|raw_vs_minmax": {
+   "disagree": 75,
+   "n": 77417,
+   "agreement": 0.9990312205329579
+  },
+  "lgbm|raw_vs_zscore": {
+   "disagree": 82,
+   "n": 77417,
+   "agreement": 0.9989408011160339
+  },
+  "lr|raw_vs_zscore": {
+   "disagree": 3231,
+   "n": 20000,
+   "agreement": 0.83845
+  },
+  "knn|raw_vs_zscore": {
+   "disagree": 2315,
+   "n": 20000,
+   "agreement": 0.88425
+  }
+ }
+}

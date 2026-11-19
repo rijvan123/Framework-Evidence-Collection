@@ -1,0 +1,1 @@
+{"model": "stack", "seed": 23, "fit_s": 116.114, "pred_us": 63.033, "rss_gb": 2.429, "n_train": 23158, "n_scored": 97436, "ident": "b10d104a868e012db2602779042ca909ffce087fd68d58366a7d546805f0cd69", "model_obj": "b10d104a868e012db2602779042ca909ffce087fd68d58366a7d546805f0cd69"}

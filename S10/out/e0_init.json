@@ -1,0 +1,40 @@
+{
+ "files": {
+  "bodmas.npz": "0a833e46c22c096920c8068d4fb54b868067777c277c0a6eecf527c98d7e5a9e",
+  "bodmas_metadata.csv": "5f1dc793cac4a540ef9e0c40fd7897142095621790d3c6f2d6637971806f4c50",
+  "bodmas_malware_category.csv": "617fda69347ec907a79f198add431c8bb39102781de41cc03b7cd1718cff2198"
+ },
+ "source_match": true,
+ "protocol_sha256": "c783f8c4b160721867ff0c3903d4212efef90786cab88c2437addc2eaec199c4",
+ "strata": {
+  "Bulk": {
+   "0": 3641
+  },
+  "Dated": {
+   "0": 53790,
+   "1": 56944
+  },
+  "Placeholder": {
+   "0": 5870
+  },
+  "PreWindow": {
+   "0": 13834
+  },
+  "Quarantine": {
+   "0": 7
+  },
+  "SpikeMal": {
+   "1": 349
+  }
+ },
+ "dup_groups": 7,
+ "oracle_root": "7dcfe2a8d1c034fff828655a5ade3a80aa0ccc843010cbd8ebb0b6630fbbf98c",
+ "vec_hash_seconds": 13.07,
+ "verify": {
+  "ok": true,
+  "first_bad": -1,
+  "n": 134448,
+  "seconds": 1.1556
+ },
+ "seconds": 28.8
+}

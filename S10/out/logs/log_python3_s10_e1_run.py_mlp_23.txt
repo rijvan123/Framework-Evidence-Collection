@@ -1,0 +1,1 @@
+{"model": "mlp", "seed": 23, "fit_s": 34.386, "pred_us": 49.91, "rss_gb": 2.165, "n_train": 23158, "n_scored": 97436, "ident": "7d51f4324e4c522f97f83b4d4731dfd2acb813bf3ec34eb9d623baf824272788", "model_obj": "7d51f4324e4c522f97f83b4d4731dfd2acb813bf3ec34eb9d623baf824272788"}

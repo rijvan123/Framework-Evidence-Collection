@@ -1,0 +1,64 @@
+{
+ "2020-01": {
+  "dated_benign": 49,
+  "censored_benign": 5870,
+  "stratum": "Placeholder",
+  "fpr_dated": 0.0,
+  "fpr_censored": 0.0018739352640545145,
+  "fpr_with_censored": 0.0018584220307484372,
+  "shift": 0.0018584220307484372,
+  "boot_half_width": 0.0,
+  "exceeds": true,
+  "fpr_ub_censored": 0.0030998868772243917
+ },
+ "2020-02": {
+  "dated_benign": 62,
+  "censored_benign": 3641,
+  "stratum": "Bulk",
+  "fpr_dated": 0.0,
+  "fpr_censored": 0.0032957978577313925,
+  "fpr_with_censored": 0.0032406157169862274,
+  "shift": 0.0032406157169862274,
+  "boot_half_width": 0.0,
+  "exceeds": true,
+  "fpr_ub_censored": 0.005334440172962378
+ },
+ "KB5_pass": true,
+ "RS1_2020-01": {
+  "fnr_dated": 0.04068181818181818,
+  "fnr_with_spike_mal": 0.03991130820399113,
+  "n_spike_mal": 110,
+  "fnr_spike_mal": 0.00909090909090909
+ },
+ "RS1_2020-02": {
+  "fnr_dated": 0.058560794044665014,
+  "fnr_with_spike_mal": 0.06605762473647224,
+  "n_spike_mal": 239,
+  "fnr_spike_mal": 0.19246861924686193
+ },
+ "RS2_bulk": {
+  "n": 3641,
+  "fp": 12,
+  "fpr": 0.0032957978577313925,
+  "fpr_ub": 0.005334440172962378,
+  "cert_0_1": false
+ },
+ "placeholder": {
+  "n": 5870,
+  "fp": 11,
+  "fpr": 0.0018739352640545145,
+  "fpr_ub": 0.0030998868772243917
+ },
+ "june_k10": {
+  "n": 12399,
+  "fnr": 0.056201090822859845,
+  "fpr": 0.0,
+  "f1": 0.9710869830425766
+ },
+ "june_k4": {
+  "n": 10985,
+  "fnr": 0.058616963803349575,
+  "fpr": 0.0,
+  "f1": 0.9698065952414081
+ }
+}

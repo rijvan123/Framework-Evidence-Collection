@@ -1,0 +1,32 @@
+2020-01 {'month': '2020-01', 'n': 4270, 'n_unknown': 304, 'nu': 0.071, 'top1_known': 0.32, 'top2_known': 0.328, 'top3_known': 0.35, 'top1_all': 0.297, 'top3_all': 0.325, 'upper_bound_all': 0.929, 'macroF1_closed': 0.094, 'macroF1_open': 0.094, 'macroF1_open_n50': 0.26, 'n_fam50': 20, 'novelty_auroc': 0.498, 'novelty_auprc': 0.071, 'novelty_base': 0.071, 'unknown_recall': 0.0, 'known_rejected': 0.004, 'cred_unknown_recall': 0.0}
+2020-02 {'month': '2020-02', 'n': 3612, 'n_unknown': 336, 'nu': 0.093, 'top1_known': 0.313, 'top2_known': 0.321, 'top3_known': 0.34, 'top1_all': 0.284, 'top3_all': 0.309, 'upper_bound_all': 0.907, 'macroF1_closed': 0.097, 'macroF1_open': 0.097, 'macroF1_open_n50': 0.27, 'n_fam50': 20, 'novelty_auroc': 0.502, 'novelty_auprc': 0.098, 'novelty_base': 0.093, 'unknown_recall': 0.006, 'known_rejected': 0.001, 'cred_unknown_recall': 0.0}
+2020-03 {'month': '2020-03', 'n': 4440, 'n_unknown': 455, 'nu': 0.102, 'top1_known': 0.406, 'top2_known': 0.414, 'top3_known': 0.428, 'top1_all': 0.364, 'top3_all': 0.384, 'upper_bound_all': 0.898, 'macroF1_closed': 0.109, 'macroF1_open': 0.109, 'macroF1_open_n50': 0.307, 'n_fam50': 18, 'novelty_auroc': 0.499, 'novelty_auprc': 0.102, 'novelty_base': 0.102, 'unknown_recall': 0.0, 'known_rejected': 0.002, 'cred_unknown_recall': 0.0}
+2020-04 {'month': '2020-04', 'n': 4297, 'n_unknown': 441, 'nu': 0.103, 'top1_known': 0.366, 'top2_known': 0.376, 'top3_known': 0.39, 'top1_all': 0.328, 'top3_all': 0.35, 'upper_bound_all': 0.897, 'macroF1_closed': 0.103, 'macroF1_open': 0.104, 'macroF1_open_n50': 0.258, 'n_fam50': 21, 'novelty_auroc': 0.504, 'novelty_auprc': 0.105, 'novelty_base': 0.103, 'unknown_recall': 0.011, 'known_rejected': 0.003, 'cred_unknown_recall': 0.0}
+2020-05 {'month': '2020-05', 'n': 5357, 'n_unknown': 981, 'nu': 0.183, 'top1_known': 0.247, 'top2_known': 0.271, 'top3_known': 0.289, 'top1_all': 0.202, 'top3_all': 0.236, 'upper_bound_all': 0.817, 'macroF1_closed': 0.085, 'macroF1_open': 0.084, 'macroF1_open_n50': 0.155, 'n_fam50': 20, 'novelty_auroc': 0.498, 'novelty_auprc': 0.183, 'novelty_base': 0.183, 'unknown_recall': 0.001, 'known_rejected': 0.005, 'cred_unknown_recall': 0.0}
+2020-06 {'month': '2020-06', 'n': 3938, 'n_unknown': 414, 'nu': 0.105, 'top1_known': 0.274, 'top2_known': 0.306, 'top3_known': 0.319, 'top1_all': 0.245, 'top3_all': 0.285, 'upper_bound_all': 0.895, 'macroF1_closed': 0.103, 'macroF1_open': 0.103, 'macroF1_open_n50': 0.289, 'n_fam50': 11, 'novelty_auroc': 0.496, 'novelty_auprc': 0.105, 'novelty_base': 0.105, 'unknown_recall': 0.0, 'known_rejected': 0.009, 'cred_unknown_recall': 0.0}
+2020-07 {'month': '2020-07', 'n': 4783, 'n_unknown': 1393, 'nu': 0.291, 'top1_known': 0.346, 'top2_known': 0.361, 'top3_known': 0.377, 'top1_all': 0.245, 'top3_all': 0.267, 'upper_bound_all': 0.709, 'macroF1_closed': 0.087, 'macroF1_open': 0.087, 'macroF1_open_n50': 0.199, 'n_fam50': 16, 'novelty_auroc': 0.497, 'novelty_auprc': 0.292, 'novelty_base': 0.291, 'unknown_recall': 0.001, 'known_rejected': 0.007, 'cred_unknown_recall': 0.0}
+2020-08 {'month': '2020-08', 'n': 3366, 'n_unknown': 890, 'nu': 0.264, 'top1_known': 0.466, 'top2_known': 0.468, 'top3_known': 0.505, 'top1_all': 0.343, 'top3_all': 0.372, 'upper_bound_all': 0.736, 'macroF1_closed': 0.081, 'macroF1_open': 0.082, 'macroF1_open_n50': 0.234, 'n_fam50': 14, 'novelty_auroc': 0.5, 'novelty_auprc': 0.265, 'novelty_base': 0.264, 'unknown_recall': 0.003, 'known_rejected': 0.003, 'cred_unknown_recall': 0.0}
+2020-09 {'month': '2020-09', 'n': 4287, 'n_unknown': 1404, 'nu': 0.328, 'top1_known': 0.391, 'top2_known': 0.396, 'top3_known': 0.425, 'top1_all': 0.263, 'top3_all': 0.286, 'upper_bound_all': 0.672, 'macroF1_closed': 0.076, 'macroF1_open': 0.075, 'macroF1_open_n50': 0.197, 'n_fam50': 16, 'novelty_auroc': 0.5, 'novelty_auprc': 0.328, 'novelty_base': 0.328, 'unknown_recall': 0.001, 'known_rejected': 0.002, 'cred_unknown_recall': 0.0}
+{
+ "KB10": {
+  "auroc": 0.4973291446698304,
+  "auprc": 0.2917190039081642,
+  "base": 0.29123980765210117,
+  "pass_": false
+ },
+ "H7": {
+  "p": 0.359375,
+  "mean_delta_pp": 0.006373236999622346,
+  "pass_": false
+ },
+ "P6": {
+  "slope_open": -0.005093642915455516,
+  "slope_det": -0.021454318542922766,
+  "diff": 0.01636067562746725,
+  "ci": [
+   0.01567845561076793,
+   0.018533756641762756
+  ],
+  "falsified": false
+ }
+}

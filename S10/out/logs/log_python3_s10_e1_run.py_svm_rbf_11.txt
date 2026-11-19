@@ -1,0 +1,1 @@
+{"model": "svm_rbf", "seed": 11, "fit_s": 26.679, "pred_us": 3306.166, "rss_gb": 1.802, "n_train": 23158, "n_scored": 97436, "ident": "44a51f77132911cd6c8237a526d38023f6d794f19e184d4570009027d6f3acee", "model_obj": "44a51f77132911cd6c8237a526d38023f6d794f19e184d4570009027d6f3acee", "n_sv": 2351}

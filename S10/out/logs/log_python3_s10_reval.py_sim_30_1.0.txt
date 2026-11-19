@@ -1,0 +1,30 @@
+L30_rho1.0 primary tracepe E_ev 90 E 481
+L30_rho1.0 primary i_auto E_ev 90 E 510
+L30_rho1.0 primary ii_review_changes E_ev 90 E 510
+L30_rho1.0 primary iii_calendar E_ev 90 E 510
+L30_rho1.0 primary iv_transcendent E_ev 30 E 270
+L30_rho1.0 primary v_pct_auto E_ev 90 E 510
+L30_rho1.0 primary vi_random E_ev 90 E 510
+L30_rho1.0 primary vii_margin E_ev 90 E 448
+L30_rho1.0 primary viii_reconcile E_ev 90 E 510
+L30_rho1.0 primary viii_frozen E_ev 600 E 1140
+L30_rho1.0 primary abl_noregion E_ev 90 E 436
+L30_rho1.0 primary abl_noflag E_ev 90 E 481
+L30_rho1.0 primary abl_nogate E_ev 90 E 481
+L30_rho1.0 primary abl_noauto E_ev 90 E 481
+L30_rho1.0 strict tracepe E_ev 0 E 481
+L30_rho1.0 strict i_auto E_ev 0 E 645
+L30_rho1.0 strict ii_review_changes E_ev 0 E 510
+L30_rho1.0 strict iii_calendar E_ev 0 E 510
+L30_rho1.0 strict iv_transcendent E_ev 0 E 300
+L30_rho1.0 strict v_pct_auto E_ev 0 E 3445
+L30_rho1.0 strict vi_random E_ev 0 E 510
+L30_rho1.0 strict vii_margin E_ev 0 E 498
+L30_rho1.0 strict viii_reconcile E_ev 0 E 510
+L30_rho1.0 strict viii_frozen E_ev 0 E 1140
+L30_rho1.0 noise 0.005
+L30_rho1.0 noise 0.01
+L30_rho1.0 noise 0.02
+L30_rho1.0 pi 0.1
+L30_rho1.0 pi 0.05
+saved L30_rho1.0

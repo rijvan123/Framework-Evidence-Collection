@@ -1,0 +1,71 @@
+=== 11:33:41 START python3 s10_monitor.py
+test 4 2020-03-29 {'n': 1184, 'ks': 0.202, 'psi': 0.067, 'cred': 0.53, 'c2st': 0.879}
+test 5 2020-04-05 {'n': 1125, 'ks': 0.19, 'psi': 0.054, 'cred': 0.577, 'c2st': 0.89}
+test 6 2020-04-12 {'n': 983, 'ks': 0.127, 'psi': 0.074, 'cred': 0.534, 'c2st': 0.905}
+test 7 2020-04-19 {'n': 964, 'ks': 0.2, 'psi': 0.034, 'cred': 0.555, 'c2st': 0.887}
+test 8 2020-04-26 {'n': 1102, 'ks': 0.209, 'psi': 0.047, 'cred': 0.604, 'c2st': 0.884}
+test 9 2020-05-03 {'n': 1133, 'ks': 0.163, 'psi': 0.073, 'cred': 0.572, 'c2st': 0.909}
+test 10 2020-05-10 {'n': 1166, 'ks': 0.24, 'psi': 0.157, 'cred': 0.604, 'c2st': 0.943}
+test 11 2020-05-17 {'n': 1164, 'ks': 0.25, 'psi': 0.128, 'cred': 0.53, 'c2st': 0.949}
+test 12 2020-05-24 {'n': 1101, 'ks': 0.248, 'psi': 0.173, 'cred': 0.541, 'c2st': 0.959}
+test 13 2020-05-31 {'n': 922, 'ks': 0.254, 'psi': 0.123, 'cred': 0.646, 'c2st': 0.933}
+test 14 2020-06-07 {'n': 1182, 'ks': 0.251, 'psi': 0.29, 'cred': 0.576, 'c2st': 0.957}
+test 15 2020-06-14 {'n': 1184, 'ks': 0.207, 'psi': 0.412, 'cred': 0.533, 'c2st': 0.979}
+test 16 2020-06-21 {'n': 510, 'ks': 0.242, 'psi': 0.195, 'cred': 0.51, 'c2st': 0.951}
+test 17 2020-06-28 {'n': 999, 'ks': 0.346, 'psi': 0.169, 'cred': 0.708, 'c2st': 0.978}
+test 18 2020-07-05 {'n': 1178, 'ks': 0.338, 'psi': 0.287, 'cred': 0.706, 'c2st': 0.972}
+test 19 2020-07-12 {'n': 849, 'ks': 0.247, 'psi': 0.173, 'cred': 0.641, 'c2st': 0.962}
+test 20 2020-07-19 {'n': 938, 'ks': 0.546, 'psi': 0.125, 'cred': 0.803, 'c2st': 0.978}
+test 21 2020-07-26 {'n': 660, 'ks': 0.336, 'psi': 0.09, 'cred': 0.71, 'c2st': 0.956}
+test 22 2020-08-02 {'n': 679, 'ks': 0.337, 'psi': 0.137, 'cred': 0.708, 'c2st': 0.963}
+test 23 2020-08-09 {'n': 492, 'ks': 0.219, 'psi': 0.159, 'cred': 0.55, 'c2st': 0.952}
+test 24 2020-08-16 {'n': 556, 'ks': 0.234, 'psi': 0.172, 'cred': 0.558, 'c2st': 0.957}
+test 25 2020-08-23 {'n': 791, 'ks': 0.244, 'psi': 0.098, 'cred': 0.619, 'c2st': 0.964}
+test 26 2020-08-30 {'n': 879, 'ks': 0.2, 'psi': 0.083, 'cred': 0.582, 'c2st': 0.959}
+test 27 2020-09-06 {'n': 926, 'ks': 0.183, 'psi': 0.088, 'cred': 0.597, 'c2st': 0.957}
+test 28 2020-09-13 {'n': 753, 'ks': 0.171, 'psi': 0.072, 'cred': 0.601, 'c2st': 0.954}
+test 29 2020-09-20 {'n': 713, 'ks': 0.244, 'psi': 0.076, 'cred': 0.648, 'c2st': 0.932}
+test 30 2020-09-27 {'n': 461, 'ks': 0.471, 'psi': 0.198, 'cred': 0.799, 'c2st': 0.948}
+/home/claude/s10/code/s10_monitor.py:162: RuntimeWarning: Mean of empty slice
+  xd = daily(dec_days, ref_md); mu0 = np.nanmean(xd)
+/home/claude/s10/code/s10_monitor.py:163: RuntimeWarning: All-NaN slice encountered
+  lam_ph = np.nanmax(ph_series(np.nan_to_num(xd, nan=mu0), mu0))
+Traceback (most recent call last):
+  File "/home/claude/s10/code/s10_monitor.py", line 227, in <module>
+    aci_res = {L: aci(L) for L in (7, 30)}
+                  ~~~^^^
+  File "/home/claude/s10/code/s10_monitor.py", line 205, in aci
+    pool = mon_idx[ts.iloc[mon_idx].to_numpy() >= np.datetime64('2020-03-01')]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/timestamps.pyx", line 492, in pandas._libs.tslibs.timestamps._Timestamp.__richcmp__
+TypeError: Cannot compare Timestamp with datetime.date. Use ts == pd.Timestamp(date) or ts.date() == date instead.
+=== 11:53:16 END python3 s10_monitor.py
+=== 11:53:16 START python3 s10_reval.py ptr
+PTR tau 0.005 gamma 0.5 scope 6212 changes 12
+PTR tau 0.001 gamma 0.5 scope 6212 changes 60
+=== 11:54:07 END python3 s10_reval.py ptr
+=== 11:54:07 START python3 s10_reval.py models 30 1.0
+L30_rho1.0 2020-03-01 cal 2019-12 n_train 27607 fit 39.0
+L30_rho1.0 2020-04-01 cal 2019-12 n_train 32226 fit 43.6
+L30_rho1.0 2020-05-01 cal 2020-03 n_train 42151 fit 69.9
+L30_rho1.0 2020-06-01 cal 2020-04 n_train 51228 fit 90.5
+L30_rho1.0 2020-07-01 cal 2020-05 n_train 60607 fit 108.3
+L30_rho1.0 2020-08-01 cal 2020-06 n_train 72747 fit 128.4
+L30_rho1.0 2020-09-01 cal 2020-07 n_train 84683 fit 138.5
+L30_rho1.0 2020-10-01 cal 2020-08 n_train 95942 fit 155.2
+L30_rho1.0 region 2020-04-01 win 8040 auc 0.888
+L30_rho1.0 region 2020-05-01 win 9548 auc 0.9
+L30_rho1.0 region 2020-06-01 win 10767 auc 0.901
+L30_rho1.0 region 2020-07-01 win 12058 auc 0.896
+L30_rho1.0 region 2020-08-01 win 10476 auc 0.895
+L30_rho1.0 region 2020-09-01 win 5889 auc 0.939
+L30_rho1.0 region 2020-10-01 win 8455 auc 0.903
+=== 12:18:55 END python3 s10_reval.py models 30 1.0
+=== 12:18:55 START e1 knn 0
+{"model": "knn", "seed": 0, "fit_s": 7.993, "pred_us": 188.606, "rss_gb": 2.153, "n_train": 23158, "n_scored": 97436, "ident": "5e650af82b23d9ae09ae06d9ea7ea87f6e83f9c6abfbd372d7c6bb8eadd31148", "model_obj": "5e650af82b23d9ae09ae06d9ea7ea87f6e83f9c6abfbd372d7c6bb8eadd31148"}
+=== 12:19:24 END e1 knn 0
+=== 12:19:24 START e1 lr_mrmr 0
+{"model": "lr_mrmr", "seed": 0, "fit_s": 91.639, "pred_us": 33.983, "rss_gb": 2.114, "n_train": 23158, "n_scored": 97436, "ident": "f524079ee64f6d60b560460b814f77ac7064fe0a963a608f28bbdb49bc678b86", "model_obj": "f524079ee64f6d60b560460b814f77ac7064fe0a963a608f28bbdb49bc678b86"}
+=== 12:21:01 END e1 lr_mrmr 0
+=== 12:21:01 START e1 et 11
+{"model": "et", "seed": 11, "fit_s": 93.189, "pred_us": 60.439, "rss_gb": 1.671, "n_train": 23158, "n_scored": 97436, "ident": "1758f98954379e71cd8d4cfcee20ef683db9bbca7965cccc271657216e9f0b2c", "model_obj": "1758f98954379e71cd8d4cfcee20ef683db9bbca7965cccc271657216e9f0b2c"}

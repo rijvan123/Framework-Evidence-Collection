@@ -1,0 +1,4 @@
+L30_rho0.5 K1 True K2 True K3 {'rel_red': 0.0, 'ci': (0.0, 0.0), 'met': True} KB1 False
+L30_rho1.0 K1 True K2 True K3 {'rel_red': 0.0, 'ci': (0.0, 0.0), 'met': True} KB1 False
+L60_rho1.0 K1 True K2 True K3 {'rel_red': 0.16874999999999996, 'ci': (0.046875, 0.2934782608695652), 'met': False} KB1 False
+L90_rho1.0 K1 True K2 True K3 {'rel_red': 0.0, 'ci': (0.0, 0.0), 'met': True} KB1 False

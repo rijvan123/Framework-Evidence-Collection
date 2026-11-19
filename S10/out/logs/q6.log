@@ -1,0 +1,17 @@
+=== 18:28:16 START python3 s10_e1_run.py mlp 11
+=== 18:28:50 END python3 s10_e1_run.py mlp 11 rc=0
+=== 18:28:50 START python3 s10_e1_run.py mlp 23
+=== 18:29:31 END python3 s10_e1_run.py mlp 23 rc=0
+=== 18:29:31 START python3 s10_e1_run.py mlp 37
+=== 18:30:14 END python3 s10_e1_run.py mlp 37 rc=0
+=== 18:30:14 START python3 s10_e1_eval.py
+=== 18:32:15 END python3 s10_e1_eval.py rc=0
+=== 18:32:15 START python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias
+=== 18:32:40 END python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias rc=0
+=== 18:32:40 START python3 s10_tables.py
+=== 18:32:53 END python3 s10_tables.py rc=0
+=== 18:32:53 START python3 s10_plots.py
+=== 18:33:15 END python3 s10_plots.py rc=0
+=== 18:33:15 START python3 s10_summary.py
+=== 18:33:17 END python3 s10_summary.py rc=0
+=== Q6 DONE 18:33:17

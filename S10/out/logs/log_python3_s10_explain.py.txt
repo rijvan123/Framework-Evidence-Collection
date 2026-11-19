@@ -1,0 +1,48 @@
+ISS 2020-01 4449
+ISS 2020-02 4092
+ISS 2020-03 8567
+ISS 2020-04 9841
+ISS 2020-05 11570
+ISS 2020-06 12399
+ISS 2020-07 11387
+ISS 2020-08 6337
+ISS 2020-09 8775
+{
+ "KB11": {
+  "mean_jaccard_correct": 0.906240481671684,
+  "mean_jaccard_wrong": 0.8562734584450403,
+  "n_wrong": 373,
+  "cliffs_delta": 0.16763604580666572,
+  "gate": true
+ },
+ "V1": {
+  "ok": true,
+  "first_bad": -1,
+  "n": 211960,
+  "seconds": 2.1286
+ },
+ "V2": {
+  "objects_checked": 28,
+  "failures": 0,
+  "seconds": 2.18
+ },
+ "V3": {
+  "n": 1000,
+  "vector_hash_match": 1000,
+  "margin_bit_identical": 1000,
+  "shap_local_accuracy_ok": 1000,
+  "seconds": 4.75
+ },
+ "local_accuracy_max_resid": 4.263256414560601e-14,
+ "gain_group": {
+  "ByteHistogram": 0.08612298358776113,
+  "ByteEntropyHistogram": 0.03206192329831083,
+  "StringExtractor": 0.136841401158121,
+  "GeneralFileInfo": 0.03604972275819144,
+  "HeaderFileInfo": 0.36551747121163236,
+  "SectionInfo": 0.030846987280963405,
+  "ImportsInfo": 0.09685262932066194,
+  "ExportsInfo": 7.800316352581742e-05,
+  "DataDirectories": 0.2156288782208321
+ }
+}

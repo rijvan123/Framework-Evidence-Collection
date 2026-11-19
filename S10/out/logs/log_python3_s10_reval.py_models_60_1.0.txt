@@ -1,0 +1,15 @@
+L60_rho1.0 2020-03-01 cal 2019-12 n_train 23158 fit 33.3
+L60_rho1.0 2020-04-01 cal 2019-12 n_train 27766 fit 39.7
+L60_rho1.0 2020-05-01 cal 2019-12 n_train 32226 fit 43.9
+L60_rho1.0 2020-06-01 cal 2020-03 n_train 42494 fit 51.8
+L60_rho1.0 2020-07-01 cal 2020-04 n_train 51228 fit 58.3
+L60_rho1.0 2020-08-01 cal 2020-05 n_train 60991 fit 67.9
+L60_rho1.0 2020-09-01 cal 2020-06 n_train 73222 fit 74.3
+L60_rho1.0 2020-10-01 cal 2020-07 n_train 84683 fit 84.5
+L60_rho1.0 region 2020-04-01 win 8567 auc 0.887
+L60_rho1.0 region 2020-05-01 win 17881 auc 0.888
+L60_rho1.0 region 2020-06-01 win 20775 auc 0.906
+L60_rho1.0 region 2020-07-01 win 23166 auc 0.904
+L60_rho1.0 region 2020-08-01 win 23061 auc 0.896
+L60_rho1.0 region 2020-09-01 win 16338 auc 0.907
+L60_rho1.0 region 2020-10-01 win 14664 auc 0.934

@@ -1,0 +1,61 @@
+{
+ "injections": {
+  "bitflip": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  },
+  "delete": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  },
+  "insert": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  },
+  "swap": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  },
+  "ts_edit": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  },
+  "actor_edit": {
+   "trials": 10000,
+   "detected": 10000,
+   "rate": 1.0
+  }
+ },
+ "all_detected": true,
+ "untouched_verifies": true,
+ "injection_seconds": 0.9264568730004612,
+ "scaling": [
+  {
+   "n": 1000,
+   "seconds": 0.001540628000839206,
+   "ok": true
+  },
+  {
+   "n": 10000,
+   "seconds": 0.021797450999656576,
+   "ok": true
+  },
+  {
+   "n": 100000,
+   "seconds": 0.13564665899957618,
+   "ok": true
+  },
+  {
+   "n": 1000000,
+   "seconds": 1.4649011920000703,
+   "ok": true
+  }
+ ],
+ "loglog_slope": 0.9728335027975495,
+ "P8_pass": true
+}

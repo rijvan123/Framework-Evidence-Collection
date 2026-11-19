@@ -1,0 +1,51 @@
+=== 15:49:18 START python3 s10_lc_timing.py timing
+=== 16:01:50 END python3 s10_lc_timing.py timing rc=0
+=== 16:01:50 START python3 s10_e5_bias.py cv
+=== 16:40:28 END python3 s10_e5_bias.py cv rc=0
+=== 16:40:28 START python3 s10_reval.py models 60 1.0
+=== 16:55:33 END python3 s10_reval.py models 60 1.0 rc=0
+=== 16:55:33 START python3 s10_reval.py sim 60 1.0
+=== 17:02:23 END python3 s10_reval.py sim 60 1.0 rc=0
+=== 17:02:23 START python3 s10_e5_bias.py leak
+./run_q4.sh: line 7:  1618 Killed                  "$@" > $O/log_$(echo "$*" | tr ' /,' '___').txt 2>&1
+=== 17:03:43 END python3 s10_e5_bias.py leak rc=0
+=== 17:03:43 START python3 s10_e5_bias.py norm
+Terminated
+=== 17:04:26 END python3 s10_e5_bias.py norm rc=0
+=== 17:04:26 START python3 s10_e5_bias.py t0
+=== 17:09:13 END python3 s10_e5_bias.py t0 rc=0
+=== 17:09:13 START python3 s10_reval.py models 90 1.0
+=== 17:23:25 END python3 s10_reval.py models 90 1.0 rc=0
+=== 17:23:25 START python3 s10_reval.py sim 90 1.0
+=== 17:30:21 END python3 s10_reval.py sim 90 1.0 rc=0
+=== 17:30:21 START python3 s10_reval.py models 30 0.5
+=== 17:44:07 END python3 s10_reval.py models 30 0.5 rc=0
+=== 17:44:07 START python3 s10_reval.py sim 30 0.5
+=== 17:44:37 END python3 s10_reval.py sim 30 0.5 rc=0
+=== 17:44:37 START python3 s10_e1_run.py lgbm_ember 11
+=== 17:47:13 END python3 s10_e1_run.py lgbm_ember 11 rc=0
+=== 17:47:13 START python3 s10_e1_run.py lgbm_ember 23
+=== 17:49:51 END python3 s10_e1_run.py lgbm_ember 23 rc=0
+=== 17:49:51 START python3 s10_e1_run.py lgbm_ember 37
+=== 17:52:30 END python3 s10_e1_run.py lgbm_ember 37 rc=0
+=== 17:52:30 START python3 s10_e1_run.py mlp 11
+=== 17:53:01 END python3 s10_e1_run.py mlp 11 rc=0
+=== 17:53:01 START python3 s10_e1_run.py mlp 23
+=== 17:53:53 END python3 s10_e1_run.py mlp 23 rc=0
+=== 17:53:53 START python3 s10_e1_run.py mlp 37
+=== 17:54:40 END python3 s10_e1_run.py mlp 37 rc=0
+=== 17:54:40 START python3 s10_e1_run.py stack 11
+=== 17:56:43 END python3 s10_e1_run.py stack 11 rc=0
+=== 17:56:43 START python3 s10_e1_run.py stack 23
+=== 17:58:47 END python3 s10_e1_run.py stack 23 rc=0
+=== 17:58:47 START python3 s10_e1_run.py stack 37
+=== 18:00:51 END python3 s10_e1_run.py stack 37 rc=0
+=== 18:00:51 START python3 s10_e1_run.py svm_rbf 11
+=== 18:06:41 END python3 s10_e1_run.py svm_rbf 11 rc=0
+=== 18:06:41 START python3 s10_e1_eval.py
+=== 18:07:55 END python3 s10_e1_eval.py rc=0
+=== 18:07:55 START python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias
+=== 18:08:22 END python3 s10_analysis.py certificates strata baserate calibration errors models drift lr bias rc=0
+=== 18:08:22 START python3 s10_reval_analysis.py
+=== 18:08:32 END python3 s10_reval_analysis.py rc=0
+=== Q4 DONE 18:08:32

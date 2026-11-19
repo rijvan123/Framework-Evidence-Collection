@@ -1,0 +1,21 @@
+/home/claude/s10/code/s10_plots.py:69: RuntimeWarning: Mean of empty slice
+  v = q['value'].to_numpy(); mu = np.nanmean(v)
+/home/claude/s10/code/s10_plots.py:69: RuntimeWarning: Mean of empty slice
+  v = q['value'].to_numpy(); mu = np.nanmean(v)
+fig fig5_metric_bars
+fig fig6_roc_pr
+fig fig7_confusion
+fig fig8_temporal_decay
+fig fig9_certificates
+fig fig10_base_rate
+fig fig11_drift
+fig fig12_monitor
+fig fig13_importance
+fig fig14_cost
+fig fig15_learning
+fig fig16_cv_vs_temporal
+fig fig17_assurance
+fig fig18_attribution
+fig fig19_ledger
+fig fig20_comparison
+fig fig21_ember2018

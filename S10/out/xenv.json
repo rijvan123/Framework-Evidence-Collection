@@ -1,0 +1,49 @@
+{
+ "device": {
+  "ident": "b3c4ba02444065706a6871edc3b268c35e30e978f252f68888baa642afe1eb52",
+  "scores_sha": "a8442bd292977c4ca2ce293da0013863acda0087d904479c491cccc3a74a15e0",
+  "ev_sha": "39b1c96b5fc4983c5c863d5c89c61d3664a1f5d7f1138e1317e27d35bf294ada",
+  "blocks_sha": "67d43a2aa78810fe0dcbdfd7ca8864b00dea0a077e4430f685ebbb11bd4022d0",
+  "vh_digest": "5de08a8a711c4fa998bda0f2399222e85e3624e02f2f13ae8dc45a4759bc0720",
+  "n_ev": 97436,
+  "fit_s": 39.3,
+  "env": {
+   "python": "3.10.12",
+   "numpy": "2.2.6",
+   "pandas": "2.3.3",
+   "lightgbm": "4.7.0",
+   "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+   "cpu": 2
+  }
+ },
+ "container": {
+  "ident": "b3c4ba02444065706a6871edc3b268c35e30e978f252f68888baa642afe1eb52",
+  "scores_sha": "a8442bd292977c4ca2ce293da0013863acda0087d904479c491cccc3a74a15e0",
+  "ev_sha": "39b1c96b5fc4983c5c863d5c89c61d3664a1f5d7f1138e1317e27d35bf294ada",
+  "blocks_sha": "67d43a2aa78810fe0dcbdfd7ca8864b00dea0a077e4430f685ebbb11bd4022d0",
+  "vh_digest": "5de08a8a711c4fa998bda0f2399222e85e3624e02f2f13ae8dc45a4759bc0720",
+  "n_ev": 97436,
+  "env": {
+   "python": "3.13.16",
+   "numpy": "2.5.3",
+   "pandas": "3.0.5",
+   "scipy": "1.18.1",
+   "sklearn": "1.9.1",
+   "lightgbm": "4.7.0",
+   "platform": "Linux-6.18.44-fc-v70-x86_64-with-glibc2.39",
+   "nproc": 2,
+   "xgboost": "3.4.1",
+   "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+  }
+ },
+ "match": {
+  "ident": true,
+  "scores_sha": true,
+  "ev_sha": true,
+  "blocks_sha": true,
+  "vh_digest": true,
+  "n_ev": true
+ },
+ "bit_identical_fraction": 1.0,
+ "KB3_pass": true
+}

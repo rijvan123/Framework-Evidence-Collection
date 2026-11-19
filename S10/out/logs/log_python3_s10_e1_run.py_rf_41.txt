@@ -1,0 +1,1 @@
+{"model": "rf", "seed": 41, "fit_s": 56.912, "pred_us": 48.302, "rss_gb": 1.653, "n_train": 23158, "n_scored": 97436, "ident": "282242b9b656c46f28775e032d696b27a0e3c0e39e73f8aa30ccffb7bd1684d3", "model_obj": "282242b9b656c46f28775e032d696b27a0e3c0e39e73f8aa30ccffb7bd1684d3"}

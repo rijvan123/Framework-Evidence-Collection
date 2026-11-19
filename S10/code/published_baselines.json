@@ -1,0 +1,174 @@
+{
+ "_note": "All values reproduced-from-paper {RfP}; carried from S6/S8/S9 where they were checked against the cited source. Global reference numbers follow S2/S6/S7.",
+ "BODMAS_T2_EmberGBDT_F1": {
+  "ref": "[1]",
+  "lo": 92.14,
+  "hi": 97.76,
+  "unit": "%",
+  "protocol": "EMBER-trained GBDT, threshold at 0.1% FPR on its own (random 80:20) validation set; monthly BODMAS test sets Oct-2019..Sep-2020; cross-dataset; natural monthly ratio"
+ },
+ "BODMAS_T2_EmberGBDT_valF1": {
+  "ref": "[1]",
+  "value": 98.62,
+  "unit": "%",
+  "protocol": "same model, random validation split"
+ },
+ "BODMAS_T2_SORELGBDT_F1": {
+  "ref": "[1]",
+  "lo": 95.7,
+  "hi": 98.94,
+  "unit": "%",
+  "protocol": "SOREL-20M-trained GBDT, as above"
+ },
+ "BODMAS_T2_SORELDNN_F1": {
+  "ref": "[1]",
+  "lo": 82.88,
+  "hi": 97.3,
+  "unit": "%",
+  "protocol": "SOREL-20M DNN, as above"
+ },
+ "BODMAS_T2_UCSBGBDT_F1": {
+  "ref": "[1]",
+  "lo": 47.19,
+  "hi": 85.69,
+  "unit": "%",
+  "protocol": "UCSB-packed GBDT, as above"
+ },
+ "BODMAS_T3_FPR": {
+  "ref": "[1]",
+  "lo": 0.0,
+  "hi": 0.51,
+  "unit": "%",
+  "protocol": "GBDT trained on BODMAS before 2019-10-01, 80:20 split, validation FPR <= 0.1%; monthly test Oct-2019..Sep-2020"
+ },
+ "BODMAS_T3_FNR": {
+  "ref": "[1]",
+  "lo": 1.71,
+  "hi": 7.23,
+  "unit": "%",
+  "protocol": "as above"
+ },
+ "BODMAS_T3_unseenFNR_max": {
+  "ref": "[1]",
+  "value": 43.04,
+  "unit": "%",
+  "protocol": "as above, families absent from training (10/2019)"
+ },
+ "BODMAS_T3_knownFNR_max": {
+  "ref": "[1]",
+  "value": 6.0,
+  "unit": "%",
+  "protocol": "as above, families present in training ('within 6%')"
+ },
+ "BODMAS_SecV_top23_known": {
+  "ref": "[1]",
+  "value": 98.0,
+  "unit": "%",
+  "qualifier": "above",
+  "protocol": "family classifier, N = 10 families, known families"
+ },
+ "BODMAS_SecV_top23_all": {
+  "ref": "[1]",
+  "lo": 20.0,
+  "hi": 60.0,
+  "unit": "%",
+  "qualifier": "around",
+  "protocol": "N = 10, all test families incl. unseen"
+ },
+ "EMBER_LGBM_AUC": {
+  "ref": "[2]",
+  "value": 0.99911,
+  "unit": "",
+  "protocol": "EMBER-2017 LightGBM baseline, EMBER-2017 temporal test set, 50:50"
+ },
+ "EMBER_LGBM_TPR_0.1": {
+  "ref": "[2]",
+  "value": 92.99,
+  "unit": "%",
+  "qualifier": "above",
+  "protocol": "detection rate at < 0.1% FPR (threshold 0.871), as above"
+ },
+ "EMBER_LGBM_TPR_1": {
+  "ref": "[2]",
+  "value": 98.2,
+  "unit": "%",
+  "qualifier": "above",
+  "protocol": "detection rate at < 1% FPR, as above"
+ },
+ "D3QN_BODMAS_F1": {
+  "ref": "[94]",
+  "value": 98.64,
+  "unit": "%",
+  "protocol": "RL feature selection (~60 features); published abstract; no temporal split reported"
+ },
+ "D3QN_EMBER2018_F1": {
+  "ref": "[94]",
+  "value": 85.07,
+  "unit": "%",
+  "protocol": "as above, EMBER-2018"
+ },
+ "TESSERACT_Android_AUT_F1": {
+  "ref": "[11]",
+  "values": {
+   "DREBIN": 0.58,
+   "MaMaDroid": 0.32,
+   "DL": 0.64
+  },
+  "unit": "",
+  "protocol": "Android, train 2014, test 2015-16 monthly, 24 months; out-of-scope platform, contrast only"
+ },
+ "Kozak_ATfull_goodware_flips": {
+  "ref": "[89]",
+  "value": 1.22,
+  "unit": "%",
+  "protocol": "EMBER-GBDT hardened by full adversarial retraining; rate computed from reported counts (73/5,983)"
+ },
+ "Kozak_ATfull_malware_flips": {
+  "ref": "[89]",
+  "value": 0.18,
+  "unit": "%",
+  "protocol": "as above; 27 malware flips (table; the text says 30) over 14,997 malicious test files (1,785 malware + 13,212 adversarial EXEmples), the denominator used in S6; with the 1,785 clean malware alone the rate would be 1.51%: denominator uncertain"
+ },
+ "Ghiani_regression_Android": {
+  "ref": "[30]",
+  "lo": 3.0,
+  "hi": 6.0,
+  "unit": "%",
+  "protocol": "share of malware experiencing security regression after continual-learning updates, Android"
+ },
+ "RecMaL_family_label_error": {
+  "ref": "[92]",
+  "value": 20.0,
+  "unit": "%",
+  "qualifier": "close to",
+  "protocol": "BODMAS family labels shifted or incorrect"
+ },
+ "Yumlembam_UCSB_incorrect_acceptance": {
+  "ref": "[93]",
+  "from": 22.8,
+  "to": 16.0,
+  "unit": "%",
+  "protocol": "ICE with ensemble NCMs, UCSB"
+ },
+ "EMBER2018_LGBM_AUC": {
+  "ref": "[2]",
+  "value": 0.9964289468,
+  "unit": "",
+  "source": "EMBER release notebook ember2018-notebook.ipynb (dataset authors' artifact, project doc)",
+  "protocol": "published EMBER-2018 LightGBM model, EMBER-2018 test set (Nov-Dec 2018, 200,000 files)"
+ },
+ "EMBER2018_LGBM_TPR_0.1": {
+  "ref": "[2]",
+  "value": 86.808,
+  "unit": "%",
+  "source": "as above",
+  "protocol": "detection rate at 0.098% FPR (threshold 0.9996, test-tuned)"
+ },
+ "EMBER2018_LGBM_TPR_1": {
+  "ref": "[2]",
+  "value": 96.498,
+  "unit": "%",
+  "source": "as above",
+  "protocol": "detection rate at 1.000% FPR (threshold 0.8336, test-tuned)"
+ }
+}

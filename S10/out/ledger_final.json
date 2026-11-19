@@ -1,0 +1,41 @@
+{
+ "V1": {
+  "ok": true,
+  "first_bad": -1,
+  "n": 212277,
+  "seconds": 2.3046
+ },
+ "V2": {
+  "objects": 39,
+  "failures": 0
+ },
+ "record_counts": {
+  "MAN0": 1,
+  "PREREG": 1,
+  "EXT": 1,
+  "ACQ": 134435,
+  "SCR": 1,
+  "DUP": 7,
+  "ORC": 1,
+  "ANC": 15,
+  "MAN": 74,
+  "MOD": 74,
+  "CAL": 34,
+  "VER": 1,
+  "CERT": 21,
+  "ISS": 77417,
+  "TRG": 1,
+  "RVC": 7,
+  "REPORT": 186
+ },
+ "head": "e7475c06a70f9657395666e58f908b37c6ea753ce9442a83c0fd2ee10918f93e",
+ "report_files": 186,
+ "ledger_bytes": 130159231,
+ "anchored_epochs": [
+  "assurance",
+  "issuance-setup",
+  "models",
+  "report",
+  "verify"
+ ]
+}

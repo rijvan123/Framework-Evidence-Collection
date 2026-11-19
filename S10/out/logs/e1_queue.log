@@ -1,0 +1,48 @@
+=== 11:12:44 START lgbm_trace 23
+{"model": "lgbm_trace", "seed": 23, "fit_s": 33.226, "pred_us": 16.378, "rss_gb": 1.761, "n_train": 23158, "n_scored": 97436, "ident": "db99d10491f0d781de7add05b97d5996df6924cc7b3cfee960ab7ebc74095674", "model_obj": "599fce830ad1c295912d9c9c9c7cce8c83a8c15af76e27a8ca230b48c253034d", "trees": 200}
+=== 11:13:21 END lgbm_trace 23
+=== 11:13:21 START lgbm_trace 37
+{"model": "lgbm_trace", "seed": 37, "fit_s": 56.524, "pred_us": 15.053, "rss_gb": 1.762, "n_train": 23158, "n_scored": 97436, "ident": "4fe3eb68ebe574c79ab93dfeb67af808ce5c47ca75b652158495c2766b43c5d8", "model_obj": "9267fb4bc24e4768d37c5a426b0dc84c1f5254c6f3e8f836749026557afe60dc", "trees": 200}
+=== 11:14:21 END lgbm_trace 37
+=== 11:14:21 START lgbm_trace 41
+{"model": "lgbm_trace", "seed": 41, "fit_s": 54.565, "pred_us": 14.93, "rss_gb": 1.753, "n_train": 23158, "n_scored": 97436, "ident": "b72163b70c9af9d1347fcdf874b43b88f3d76a14a496755bda2d381080ebcd38", "model_obj": "bbe7a19a332008caf2f2698eb8d943b1735174089aa8305d4ac88a028b845a2b", "trees": 200}
+=== 11:15:18 END lgbm_trace 41
+=== 11:15:18 START lgbm_trace 53
+{"model": "lgbm_trace", "seed": 53, "fit_s": 29.646, "pred_us": 16.176, "rss_gb": 1.751, "n_train": 23158, "n_scored": 97436, "ident": "e3656bea4bf8e9a460f13d136dd9f057fa4b1f920f60addacd920fe465e7abce", "model_obj": "cd5d0738d6738f22a49c1b95aafb496621c24a6af464f75ddce485dfd507b411", "trees": 200}
+=== 11:15:51 END lgbm_trace 53
+=== 11:15:51 START ember2018_pub 0
+[LightGBM] [Warning] Ignoring unrecognized parameter 'max_position' found in model string.
+{"model": "ember2018_pub", "seed": 0, "fit_s": 0.0, "pred_us": 378.825, "rss_gb": 2.095, "n_train": 23158, "n_scored": 97436, "ident": "441a714d744f0c44d96dfbb003cb5ec401b3e31a5dd98c584c315b9c3f70a8ff", "model_file_sha256": "509de4a83e2d76b69fb3025ced0429e5f40f6a95ca40122b9eedd03317fff5e2", "trees": 1000, "load_s": 0.543685509999932}
+=== 11:16:33 END ember2018_pub 0
+=== 11:16:33 START xgb 11
+{"model": "xgb", "seed": 11, "fit_s": 74.807, "pred_us": 11.101, "rss_gb": 1.918, "n_train": 23158, "n_scored": 97436, "ident": "f38270b06246f31b57c58a27059668d3b2786676393533afddbe04a9ee2140a8", "model_obj": "f38270b06246f31b57c58a27059668d3b2786676393533afddbe04a9ee2140a8"}
+=== 11:17:51 END xgb 11
+=== 11:17:51 START xgb 23
+{"model": "xgb", "seed": 23, "fit_s": 93.232, "pred_us": 17.872, "rss_gb": 1.922, "n_train": 23158, "n_scored": 97436, "ident": "3c6b6cdd52efbeca5c57276f8dbb330554ea9da3fb917a1105545d5f3ed84fc4", "model_obj": "3c6b6cdd52efbeca5c57276f8dbb330554ea9da3fb917a1105545d5f3ed84fc4"}
+=== 11:19:27 END xgb 23
+=== 11:19:27 START xgb 37
+{"model": "xgb", "seed": 37, "fit_s": 191.866, "pred_us": 18.254, "rss_gb": 2.035, "n_train": 23158, "n_scored": 97436, "ident": "74bdf908c2473f26d3873bd9277757d46b143a17ac10c65d51b2c972ad6c4d0c", "model_obj": "74bdf908c2473f26d3873bd9277757d46b143a17ac10c65d51b2c972ad6c4d0c"}
+=== 11:22:43 END xgb 37
+=== 11:22:43 START xgb 41
+{"model": "xgb", "seed": 41, "fit_s": 174.955, "pred_us": 19.33, "rss_gb": 2.033, "n_train": 23158, "n_scored": 97436, "ident": "a1674c81972f18e4c1c62a20a5d5cf76368838a9295f3a356d789181d3646091", "model_obj": "a1674c81972f18e4c1c62a20a5d5cf76368838a9295f3a356d789181d3646091"}
+=== 11:25:42 END xgb 41
+=== 11:25:42 START xgb 53
+{"model": "xgb", "seed": 53, "fit_s": 209.75, "pred_us": 18.145, "rss_gb": 1.918, "n_train": 23158, "n_scored": 97436, "ident": "5c2f1f0c3bb625eba0e26fefd769e4e1f5fdf836dc2a8a47051bf4b655c81777", "model_obj": "5c2f1f0c3bb625eba0e26fefd769e4e1f5fdf836dc2a8a47051bf4b655c81777"}
+=== 11:29:16 END xgb 53
+=== 11:29:16 START nb 0
+{"model": "nb", "seed": 0, "fit_s": 1.745, "pred_us": 61.566, "rss_gb": 2.09, "n_train": 23158, "n_scored": 97436, "ident": "8cd16803b75b877bbd06c6a2c92544d24623c2bbc51ad3bcd48485b6368a8be9", "model_obj": "8cd16803b75b877bbd06c6a2c92544d24623c2bbc51ad3bcd48485b6368a8be9"}
+=== 11:29:25 END nb 0
+=== 11:29:25 START lr 0
+{"model": "lr", "seed": 0, "fit_s": 8.399, "pred_us": 50.546, "rss_gb": 2.091, "n_train": 23158, "n_scored": 97436, "ident": "1f69a7f51280537b7591330b1d2b3fd137d041720a79e9b52605cf6e22470074", "model_obj": "1f69a7f51280537b7591330b1d2b3fd137d041720a79e9b52605cf6e22470074"}
+=== 11:29:41 END lr 0
+=== 11:29:41 START lr_chi2 0
+{"model": "lr_chi2", "seed": 0, "fit_s": 7.311, "pred_us": 40.498, "rss_gb": 2.131, "n_train": 23158, "n_scored": 97436, "ident": "0150829d413e4b8dfab2bd4565a1618238f757b1ebe2b20fc34bd87f3da42629", "model_obj": "0150829d413e4b8dfab2bd4565a1618238f757b1ebe2b20fc34bd87f3da42629"}
+=== 11:29:55 END lr_chi2 0
+=== 11:29:55 START lr_ig 0
+{"model": "lr_ig", "seed": 0, "fit_s": 10.098, "pred_us": 27.521, "rss_gb": 2.13, "n_train": 23158, "n_scored": 97436, "ident": "af2f7582b789ddd3a1944557be3ff11e7205d6007cf36dd6e52a6896026e1202", "model_obj": "af2f7582b789ddd3a1944557be3ff11e7205d6007cf36dd6e52a6896026e1202"}
+=== 11:30:11 END lr_ig 0
+=== 11:30:11 START lr_pca 0
+{"model": "lr_pca", "seed": 0, "fit_s": 98.09, "pred_us": 82.441, "rss_gb": 2.149, "n_train": 23158, "n_scored": 97436, "ident": "dec1187392ed56959d256687c257cd6a9dbb7b07f69070b00bcc39182889c8e6", "model_obj": "dec1187392ed56959d256687c257cd6a9dbb7b07f69070b00bcc39182889c8e6", "pca_components": 1151}
+=== 11:31:59 END lr_pca 0
+=== 11:31:59 START svm_lin 0
+{"model": "svm_lin", "seed": 0, "fit_s": 93.117, "pred_us": 34.775, "rss_gb": 2.093, "n_train": 23158, "n_scored": 97436, "ident": "caf3511541ad35b2f38d33c4c55968b943c42758bf0920e3fcdbc51e0171e1e6", "model_obj": "caf3511541ad35b2f38d33c4c55968b943c42758bf0920e3fcdbc51e0171e1e6"}

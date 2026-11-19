@@ -1,0 +1,15 @@
+=== 18:08:39 START python3 s10_e5_bias.py leak
+=== 18:17:06 END python3 s10_e5_bias.py leak rc=0
+=== 18:17:06 START python3 s10_e5_bias.py norm
+=== 18:21:46 END python3 s10_e5_bias.py norm rc=0
+=== 18:21:46 START python3 s10_flips.py L30_rho1.0 L60_rho1.0 L90_rho1.0 L30_rho0.5
+=== 18:21:47 END python3 s10_flips.py L30_rho1.0 L60_rho1.0 L90_rho1.0 L30_rho0.5 rc=0
+=== 18:21:47 START python3 s10_lc_timing.py lc
+=== 18:27:39 END python3 s10_lc_timing.py lc rc=0
+=== 18:27:39 START python3 s10_tables.py
+=== 18:27:50 END python3 s10_tables.py rc=0
+=== 18:27:50 START python3 s10_plots.py
+=== 18:28:08 END python3 s10_plots.py rc=0
+=== 18:28:08 START python3 s10_summary.py
+=== 18:28:10 END python3 s10_summary.py rc=0
+=== Q5 DONE 18:28:10
